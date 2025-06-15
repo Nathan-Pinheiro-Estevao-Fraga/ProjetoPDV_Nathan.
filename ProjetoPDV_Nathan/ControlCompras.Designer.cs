@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlCompras));
             this.panelCentral = new System.Windows.Forms.Panel();
             this.panelPai = new System.Windows.Forms.Panel();
             this.panelUnidade = new System.Windows.Forms.Panel();
@@ -111,6 +112,14 @@
             this.textBoxPreçoUnitário = new System.Windows.Forms.TextBox();
             this.textBoxDescricaoProduto = new System.Windows.Forms.TextBox();
             this.pictureboxImagemProduto = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDevolução = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFinaliPedido = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEditar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCancelarAção = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNovoPedido = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImprimir = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInserir = new System.Windows.Forms.PictureBox();
             this.panelCentral.SuspendLayout();
             this.panelPai.SuspendLayout();
             this.panelUnidade.SuspendLayout();
@@ -136,6 +145,14 @@
             this.panelNovoPedido.SuspendLayout();
             this.panelDaImagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxImagemProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDevolução)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFinaliPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCancelarAção)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImprimir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInserir)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCentral
@@ -305,6 +322,7 @@
             this.textBoxData.Size = new System.Drawing.Size(98, 20);
             this.textBoxData.TabIndex = 32;
             this.textBoxData.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxData.TextChanged += new System.EventHandler(this.textBoxData_TextChanged);
             // 
             // labelHora
             // 
@@ -634,6 +652,7 @@
             // panelInserirProduto
             // 
             this.panelInserirProduto.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelInserirProduto.Controls.Add(this.pictureBoxInserir);
             this.panelInserirProduto.Controls.Add(this.labelInserirProduto);
             this.panelInserirProduto.Location = new System.Drawing.Point(863, 9);
             this.panelInserirProduto.Name = "panelInserirProduto";
@@ -654,6 +673,7 @@
             // panelSalvarPedido
             // 
             this.panelSalvarPedido.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelSalvarPedido.Controls.Add(this.pictureBox3);
             this.panelSalvarPedido.Controls.Add(this.labelSalvarPedido);
             this.panelSalvarPedido.Location = new System.Drawing.Point(475, 9);
             this.panelSalvarPedido.Name = "panelSalvarPedido";
@@ -674,6 +694,7 @@
             // panelImprimirPedido
             // 
             this.panelImprimirPedido.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelImprimirPedido.Controls.Add(this.pictureBoxImprimir);
             this.panelImprimirPedido.Controls.Add(this.labelImprimirPedido);
             this.panelImprimirPedido.Location = new System.Drawing.Point(766, 9);
             this.panelImprimirPedido.Name = "panelImprimirPedido";
@@ -684,7 +705,7 @@
             // 
             this.labelImprimirPedido.AutoSize = true;
             this.labelImprimirPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImprimirPedido.Location = new System.Drawing.Point(1, 4);
+            this.labelImprimirPedido.Location = new System.Drawing.Point(1, 3);
             this.labelImprimirPedido.Name = "labelImprimirPedido";
             this.labelImprimirPedido.Size = new System.Drawing.Size(93, 13);
             this.labelImprimirPedido.TabIndex = 6;
@@ -694,6 +715,7 @@
             // panelDevolução
             // 
             this.panelDevolução.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDevolução.Controls.Add(this.pictureBoxDevolução);
             this.panelDevolução.Controls.Add(this.labelDevolução);
             this.panelDevolução.Location = new System.Drawing.Point(669, 9);
             this.panelDevolução.Name = "panelDevolução";
@@ -704,7 +726,7 @@
             // 
             this.labelDevolução.AutoSize = true;
             this.labelDevolução.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDevolução.Location = new System.Drawing.Point(13, 2);
+            this.labelDevolução.Location = new System.Drawing.Point(14, 2);
             this.labelDevolução.Name = "labelDevolução";
             this.labelDevolução.Size = new System.Drawing.Size(68, 13);
             this.labelDevolução.TabIndex = 5;
@@ -714,6 +736,7 @@
             // panelEditar
             // 
             this.panelEditar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelEditar.Controls.Add(this.pictureBoxEditar);
             this.panelEditar.Controls.Add(this.labelEditar);
             this.panelEditar.Location = new System.Drawing.Point(378, 9);
             this.panelEditar.Name = "panelEditar";
@@ -734,6 +757,7 @@
             // panelFinalizarPedido
             // 
             this.panelFinalizarPedido.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFinalizarPedido.Controls.Add(this.pictureBoxFinaliPedido);
             this.panelFinalizarPedido.Controls.Add(this.labelFinalizarPedido);
             this.panelFinalizarPedido.Location = new System.Drawing.Point(572, 9);
             this.panelFinalizarPedido.Name = "panelFinalizarPedido";
@@ -755,6 +779,7 @@
             // panelCancelarAção
             // 
             this.panelCancelarAção.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelCancelarAção.Controls.Add(this.pictureBoxCancelarAção);
             this.panelCancelarAção.Controls.Add(this.labelCancelarAção);
             this.panelCancelarAção.Location = new System.Drawing.Point(281, 9);
             this.panelCancelarAção.Name = "panelCancelarAção";
@@ -775,6 +800,7 @@
             // panelNovoPedido
             // 
             this.panelNovoPedido.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelNovoPedido.Controls.Add(this.pictureBoxNovoPedido);
             this.panelNovoPedido.Controls.Add(this.labelNovoPedido);
             this.panelNovoPedido.Location = new System.Drawing.Point(184, 9);
             this.panelNovoPedido.Name = "panelNovoPedido";
@@ -1005,6 +1031,94 @@
             this.pictureboxImagemProduto.TabIndex = 0;
             this.pictureboxImagemProduto.TabStop = false;
             // 
+            // pictureBoxDevolução
+            // 
+            this.pictureBoxDevolução.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDevolução.ErrorImage")));
+            this.pictureBoxDevolução.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDevolução.Image")));
+            this.pictureBoxDevolução.Location = new System.Drawing.Point(32, 19);
+            this.pictureBoxDevolução.Name = "pictureBoxDevolução";
+            this.pictureBoxDevolução.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxDevolução.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxDevolução.TabIndex = 9;
+            this.pictureBoxDevolução.TabStop = false;
+            // 
+            // pictureBoxFinaliPedido
+            // 
+            this.pictureBoxFinaliPedido.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxFinaliPedido.ErrorImage")));
+            this.pictureBoxFinaliPedido.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFinaliPedido.Image")));
+            this.pictureBoxFinaliPedido.Location = new System.Drawing.Point(30, 19);
+            this.pictureBoxFinaliPedido.Name = "pictureBoxFinaliPedido";
+            this.pictureBoxFinaliPedido.Size = new System.Drawing.Size(32, 28);
+            this.pictureBoxFinaliPedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxFinaliPedido.TabIndex = 10;
+            this.pictureBoxFinaliPedido.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(32, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 33);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBoxEditar
+            // 
+            this.pictureBoxEditar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEditar.ErrorImage")));
+            this.pictureBoxEditar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEditar.Image")));
+            this.pictureBoxEditar.Location = new System.Drawing.Point(27, 17);
+            this.pictureBoxEditar.Name = "pictureBoxEditar";
+            this.pictureBoxEditar.Size = new System.Drawing.Size(34, 28);
+            this.pictureBoxEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxEditar.TabIndex = 12;
+            this.pictureBoxEditar.TabStop = false;
+            // 
+            // pictureBoxCancelarAção
+            // 
+            this.pictureBoxCancelarAção.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCancelarAção.ErrorImage")));
+            this.pictureBoxCancelarAção.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCancelarAção.Image")));
+            this.pictureBoxCancelarAção.Location = new System.Drawing.Point(29, 19);
+            this.pictureBoxCancelarAção.Name = "pictureBoxCancelarAção";
+            this.pictureBoxCancelarAção.Size = new System.Drawing.Size(33, 29);
+            this.pictureBoxCancelarAção.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxCancelarAção.TabIndex = 13;
+            this.pictureBoxCancelarAção.TabStop = false;
+            // 
+            // pictureBoxNovoPedido
+            // 
+            this.pictureBoxNovoPedido.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovoPedido.ErrorImage")));
+            this.pictureBoxNovoPedido.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovoPedido.Image")));
+            this.pictureBoxNovoPedido.Location = new System.Drawing.Point(27, 17);
+            this.pictureBoxNovoPedido.Name = "pictureBoxNovoPedido";
+            this.pictureBoxNovoPedido.Size = new System.Drawing.Size(40, 30);
+            this.pictureBoxNovoPedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxNovoPedido.TabIndex = 14;
+            this.pictureBoxNovoPedido.TabStop = false;
+            // 
+            // pictureBoxImprimir
+            // 
+            this.pictureBoxImprimir.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxImprimir.ErrorImage")));
+            this.pictureBoxImprimir.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImprimir.Image")));
+            this.pictureBoxImprimir.Location = new System.Drawing.Point(32, 19);
+            this.pictureBoxImprimir.Name = "pictureBoxImprimir";
+            this.pictureBoxImprimir.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxImprimir.TabIndex = 15;
+            this.pictureBoxImprimir.TabStop = false;
+            // 
+            // pictureBoxInserir
+            // 
+            this.pictureBoxInserir.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxInserir.ErrorImage")));
+            this.pictureBoxInserir.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInserir.Image")));
+            this.pictureBoxInserir.Location = new System.Drawing.Point(22, 14);
+            this.pictureBoxInserir.Name = "pictureBoxInserir";
+            this.pictureBoxInserir.Size = new System.Drawing.Size(43, 33);
+            this.pictureBoxInserir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxInserir.TabIndex = 16;
+            this.pictureBoxInserir.TabStop = false;
+            // 
             // ControlCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1058,6 +1172,14 @@
             this.panelNovoPedido.PerformLayout();
             this.panelDaImagem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxImagemProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDevolução)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFinaliPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCancelarAção)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImprimir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInserir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1147,5 +1269,13 @@
         private System.Windows.Forms.Label labelSubtotalItem;
         private System.Windows.Forms.TextBox textBoxComissão1;
         private System.Windows.Forms.TextBox textBoxPreçoUnitário;
+        private System.Windows.Forms.PictureBox pictureBoxDevolução;
+        private System.Windows.Forms.PictureBox pictureBoxInserir;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxImprimir;
+        private System.Windows.Forms.PictureBox pictureBoxEditar;
+        private System.Windows.Forms.PictureBox pictureBoxFinaliPedido;
+        private System.Windows.Forms.PictureBox pictureBoxCancelarAção;
+        private System.Windows.Forms.PictureBox pictureBoxNovoPedido;
     }
 }
