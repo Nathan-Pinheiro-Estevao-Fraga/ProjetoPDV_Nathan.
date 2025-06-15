@@ -34,7 +34,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.lblDataHora = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCreditos = new System.Windows.Forms.Label();
@@ -52,8 +51,6 @@
             this.LabPainel = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             this.pictureBoxComprar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelConteudo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,24 +130,13 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click_1);
             // 
-            // lblDataHora
-            // 
-            this.lblDataHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblDataHora.AutoSize = true;
-            this.lblDataHora.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lblDataHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblDataHora.Location = new System.Drawing.Point(165, 225);
-            this.lblDataHora.Name = "lblDataHora";
-            this.lblDataHora.Size = new System.Drawing.Size(165, 37);
-            this.lblDataHora.TabIndex = 15;
-            this.lblDataHora.Text = "Data e Hora:";
-            // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(254, 94);
+            this.label2.Location = new System.Drawing.Point(279, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(554, 74);
             this.label2.TabIndex = 16;
@@ -170,6 +155,7 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Sistema desenvolvido por Nathan Pinheiro - Projeto acadêmico.\r\n© 2025. Todos os d" +
     "ireitos reservados.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // lblCreditos
@@ -183,13 +169,12 @@
             this.lblCreditos.Size = new System.Drawing.Size(368, 15);
             this.lblCreditos.TabIndex = 18;
             this.lblCreditos.Text = "© 2025 - Nathan Pinheiro. Ícones obtidos em https://icons8.com.br/";
-            this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panelCentralConteudo
             // 
             this.panelCentralConteudo.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelCentralConteudo.Controls.Add(this.lblCreditos);
-            this.panelCentralConteudo.Controls.Add(this.lblDataHora);
             this.panelCentralConteudo.Controls.Add(this.label3);
             this.panelCentralConteudo.Controls.Add(this.label2);
             this.panelCentralConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,7 +192,7 @@
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnClientes.Location = new System.Drawing.Point(6, 144);
+            this.btnClientes.Location = new System.Drawing.Point(6, 124);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(194, 39);
             this.btnClientes.TabIndex = 2;
@@ -224,7 +209,7 @@
             this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnEstoque.ForeColor = System.Drawing.Color.White;
             this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(6, 218);
+            this.btnEstoque.Location = new System.Drawing.Point(6, 198);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(194, 39);
             this.btnEstoque.TabIndex = 4;
@@ -241,7 +226,7 @@
             this.btnGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnGraficos.ForeColor = System.Drawing.Color.White;
             this.btnGraficos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGraficos.Location = new System.Drawing.Point(6, 255);
+            this.btnGraficos.Location = new System.Drawing.Point(6, 235);
             this.btnGraficos.Name = "btnGraficos";
             this.btnGraficos.Size = new System.Drawing.Size(194, 39);
             this.btnGraficos.TabIndex = 6;
@@ -258,7 +243,7 @@
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSair.ForeColor = System.Drawing.Color.White;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnSair.Location = new System.Drawing.Point(3, 292);
+            this.btnSair.Location = new System.Drawing.Point(3, 272);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(197, 39);
             this.btnSair.TabIndex = 8;
@@ -275,11 +260,11 @@
             this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(6, 110);
+            this.btnDashboard.Location = new System.Drawing.Point(6, 90);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(194, 34);
             this.btnDashboard.TabIndex = 9;
-            this.btnDashboard.Text = "         Dashboard";
+            this.btnDashboard.Text = "         Tela inicial";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -288,7 +273,7 @@
             // 
             this.pictureBoxEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEstoque.Image")));
-            this.pictureBoxEstoque.Location = new System.Drawing.Point(25, 226);
+            this.pictureBoxEstoque.Location = new System.Drawing.Point(25, 206);
             this.pictureBoxEstoque.Name = "pictureBoxEstoque";
             this.pictureBoxEstoque.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxEstoque.TabIndex = 8;
@@ -299,7 +284,7 @@
             // 
             this.pictureBoxSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSair.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSair.Image")));
-            this.pictureBoxSair.Location = new System.Drawing.Point(25, 300);
+            this.pictureBoxSair.Location = new System.Drawing.Point(25, 280);
             this.pictureBoxSair.Name = "pictureBoxSair";
             this.pictureBoxSair.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxSair.TabIndex = 5;
@@ -310,7 +295,7 @@
             // 
             this.pictureBoxClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClientes.Image")));
-            this.pictureBoxClientes.Location = new System.Drawing.Point(25, 151);
+            this.pictureBoxClientes.Location = new System.Drawing.Point(25, 131);
             this.pictureBoxClientes.Name = "pictureBoxClientes";
             this.pictureBoxClientes.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxClientes.TabIndex = 9;
@@ -321,7 +306,7 @@
             // 
             this.pictureBoxDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDashboard.Image")));
-            this.pictureBoxDashboard.Location = new System.Drawing.Point(25, 114);
+            this.pictureBoxDashboard.Location = new System.Drawing.Point(25, 94);
             this.pictureBoxDashboard.Name = "pictureBoxDashboard";
             this.pictureBoxDashboard.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxDashboard.TabIndex = 10;
@@ -332,7 +317,7 @@
             // 
             this.pictureBoxGráficos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxGráficos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGráficos.Image")));
-            this.pictureBoxGráficos.Location = new System.Drawing.Point(25, 263);
+            this.pictureBoxGráficos.Location = new System.Drawing.Point(25, 243);
             this.pictureBoxGráficos.Name = "pictureBoxGráficos";
             this.pictureBoxGráficos.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxGráficos.TabIndex = 13;
@@ -358,7 +343,7 @@
             this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnComprar.ForeColor = System.Drawing.Color.White;
             this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnComprar.Location = new System.Drawing.Point(0, 180);
+            this.btnComprar.Location = new System.Drawing.Point(0, 160);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(197, 39);
             this.btnComprar.TabIndex = 15;
@@ -370,45 +355,17 @@
             // 
             this.pictureBoxComprar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxComprar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxComprar.Image")));
-            this.pictureBoxComprar.Location = new System.Drawing.Point(25, 187);
+            this.pictureBoxComprar.Location = new System.Drawing.Point(25, 167);
             this.pictureBoxComprar.Name = "pictureBoxComprar";
             this.pictureBoxComprar.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxComprar.TabIndex = 16;
             this.pictureBoxComprar.TabStop = false;
             this.pictureBoxComprar.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(6, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 34);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "         Tela inicial";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(25, 77);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.TabIndex = 20;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click_1);
-            // 
             // panelConteudo
             // 
             this.panelConteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panelConteudo.Controls.Add(this.pictureBox4);
-            this.panelConteudo.Controls.Add(this.button1);
+            this.panelConteudo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConteudo.Controls.Add(this.pictureBoxComprar);
             this.panelConteudo.Controls.Add(this.btnComprar);
             this.panelConteudo.Controls.Add(this.LabPainel);
@@ -455,7 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelConteudo.ResumeLayout(false);
             this.panelConteudo.PerformLayout();
             this.ResumeLayout(false);
@@ -466,7 +422,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Label lblDataHora;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCreditos;
@@ -484,8 +439,6 @@
         private System.Windows.Forms.Label LabPainel;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.PictureBox pictureBoxComprar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panelConteudo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;

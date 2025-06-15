@@ -18,39 +18,20 @@ namespace ProjetoPDV_Nathan
         {
             InitializeComponent();
         }
-        //Instância para Hora
-        private Timer timerHora;
+        
 
         private void Controle2_Load(object sender, EventArgs e)
         {
             
-        }
+        }        
 
-        private void TimerHora_Tick(object sender, EventArgs e)
-        {
-            AtualizarDataHora();
-        }
-
-        //Data e hora atuais
-        private void AtualizarDataHora()
-        {
-            string diaSemana = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("pt-BR"));
-            string dataHora = DateTime.Now.ToString("dd 'de' MMMM 'de' yyyy - HH:mm:ss", new System.Globalization.CultureInfo("pt-BR"));
-            lblDataHora.Text = $"{diaSemana}, {dataHora}";
-        }
+        
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             controleEstoque = new ControlEstoque();
             controleDashboard = new ControlDashboard();                        
-            controleClientes = new ControlClientes();
-
-            timerHora = new Timer();
-            timerHora.Interval = 1000;
-            timerHora.Tick += TimerHora_Tick;
-            timerHora.Start();
-
-            AtualizarDataHora();
+            controleClientes = new ControlClientes();            
         }                
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -232,6 +213,11 @@ namespace ProjetoPDV_Nathan
         }
 
         private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDataHora_Click(object sender, EventArgs e)
         {
 
         }

@@ -34,32 +34,20 @@ namespace ProjetoPDV_Nathan
 
         private void Controle1_Load(object sender, EventArgs e)
         {
+            ProdutoDAL dal = new ProdutoDAL();
+            DataTable tabela = dal.CarregarProdutos();
 
+            dgvEstoque.DataSource = tabela;
 
-            //Remove a permissão do usuário de redimensionar colunas e linhas, e adicionar linhas
             dgvEstoque.AllowUserToResizeColumns = false;
-            dgvEstoque.AllowUserToResizeRows = false;            
-                                                     
-
-            //adicionando colunas:
-            dgvEstoque.Columns.Add("colReferencia", "Referência");
-            dgvEstoque.Columns.Add("colDescricao", "Descrição");
-            dgvEstoque.Columns.Add("colDataCompra", "Unit U.Compra");
-            dgvEstoque.Columns.Add("colDataVenda", "U. Venda");
-            dgvEstoque.Columns.Add("colAtacado", "P. Atacado");
-            dgvEstoque.Columns.Add("colVarejo", "P. Varejo");
-            dgvEstoque.Columns.Add("colEstoque", "Estoque");
-            dgvEstoque.Columns.Add("colFornecido", "Fornecido");
-            dgvEstoque.Columns.Add("colCarteira", "Carteira");
-            dgvEstoque.Columns.Add("colCompradas", "Compradas");
-            dgvEstoque.Columns.Add("colVendidas", "Vendidas");
-
-            //estilização da tabela:
+            dgvEstoque.AllowUserToResizeRows = false;
             dgvEstoque.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             dgvEstoque.DefaultCellStyle.BackColor = Color.LightBlue;
             dgvEstoque.DefaultCellStyle.SelectionBackColor = Color.Yellow;
-            dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;            
+            dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;
 
+            AtualizarTotalItens();
         }
 
         private void btnNovoProduto_Click(object sender, EventArgs e)
