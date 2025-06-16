@@ -135,19 +135,33 @@ namespace ProjetoPDV_Nathan
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.SelectedRows.Count > 0)
+            if (dgvClientes.CurrentRow != null && !dgvClientes.CurrentRow.IsNewRow)
             {
-                var row = dgvClientes.SelectedRows[0];
-                if (int.TryParse(row.Cells["colID"].Value?.ToString(), out int id))
+                var row = dgvClientes.CurrentRow;
+
+                string nome = row.Cells["colCliente"].Value?.ToString() ?? "cliente";
+                DialogResult confirm = MessageBox.Show(
+                    $"Tem certeza que deseja excluir o cliente \"{nome}\"?",
+                    "Confirmar Exclusão",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
                 {
-                    ClienteDAL dal = new ClienteDAL();
-                    dal.ExcluirCliente(id);
-                    CarregarDadosClientes();
+                    if (int.TryParse(row.Cells["colID"].Value?.ToString(), out int id))
+                    {
+                        ClienteDAL dal = new ClienteDAL();
+                        dal.ExcluirCliente(id); // remove do banco
+                        dgvClientes.Rows.Remove(row); // remove da grid
+
+                        AtualizarTotalItens(); // atualiza contagem
+                        MessageBox.Show("Cliente excluído com sucesso.", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Selecione uma linha para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente válido para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -13,6 +13,12 @@ namespace ProjetoPDV_Nathan
         public string Email => txtEmail.Text;
 
         private TextBox txtNome, txtTelefone, txtEstado, txtCidade, txtEmail;
+
+        private void FormEditarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private Button btnSalvar, btnCancelar;
 
         public FormEditarCliente(string nome, string telefone, string estado, string cidade, string email)
