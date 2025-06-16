@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoPDV_Nathan
@@ -16,33 +12,36 @@ namespace ProjetoPDV_Nathan
         {
             InitializeComponent();
             this.Load += Controle1_Load;
+
             dgvEstoque.CellValidating += dgvEstoque_CellValidating;
-            dgvEstoque.EditingControlShowing += dgvEstoque_EditingControlShowing;            
-            AtualizarTotalItens();
-
+            dgvEstoque.EditingControlShowing += dgvEstoque_EditingControlShowing;
         }
-        private void AtualizarTotalItens()
-        {
-            lblTotalItens.Text = $"Total de itens: {dgvEstoque.Rows.Count}";
-        }
-
-        private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private bool isReferenciaColuna = false;
 
         private void Controle1_Load(object sender, EventArgs e)
         {
+            CarregarDados();
+        }
+
+        private void CarregarDados()
+        {
             ProdutoDAL dal = new ProdutoDAL();
             DataTable tabela = dal.CarregarProdutos();
-
             dgvEstoque.DataSource = tabela;
 
-            dgvEstoque.AllowUserToResizeColumns = false;
-            dgvEstoque.AllowUserToResizeRows = false;
-            dgvEstoque.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            // Configura colunas
+            dgvEstoque.Columns["referencia"].HeaderText = "Referência";
+            dgvEstoque.Columns["descricao"].HeaderText = "Descrição";
+            dgvEstoque.Columns["unit_compra"].HeaderText = "Unit.U.Compra";
+            dgvEstoque.Columns["unit_venda"].HeaderText = "U.Venda";
+            dgvEstoque.Columns["preco_atacado"].HeaderText = "P.Atacado";
+            dgvEstoque.Columns["preco_varejo"].HeaderText = "P.Varejo";
+            dgvEstoque.Columns["estoque"].HeaderText = "Estoque";
+            dgvEstoque.Columns["fornecido"].HeaderText = "Fornecido";
+            dgvEstoque.Columns["carteira"].HeaderText = "Carteira";
+            dgvEstoque.Columns["compradas"].HeaderText = "Compradas";
+            dgvEstoque.Columns["vendidas"].HeaderText = "Vendidas";
 
+            dgvEstoque.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEstoque.DefaultCellStyle.BackColor = Color.LightBlue;
             dgvEstoque.DefaultCellStyle.SelectionBackColor = Color.Yellow;
             dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -50,184 +49,142 @@ namespace ProjetoPDV_Nathan
             AtualizarTotalItens();
         }
 
-        private void btnNovoProduto_Click(object sender, EventArgs e)
+        private void AtualizarTotalItens()
         {
-            int index = dgvEstoque.Rows.Add();
-
-            DataGridViewRow novaLinha = dgvEstoque.Rows[index];
-
-            novaLinha.Cells["colReferencia"].Value = ""; // usuário irá preencher
-            novaLinha.Cells["colDescricao"].Value = "";  // Aqui também
-            novaLinha.Cells["colDataCompra"].Value = DateTime.Now.ToShortDateString(); // data atual
-            novaLinha.Cells["colDataVenda"].Value = ""; 
-            novaLinha.Cells["colAtacado"].Value = "R$ 0,00";
-            novaLinha.Cells["colVarejo"].Value = "R$ 0,00";
-            novaLinha.Cells["colEstoque"].Value = "0";
-            novaLinha.Cells["colFornecido"].Value = "0";
-            novaLinha.Cells["colCarteira"].Value = "0";
-            novaLinha.Cells["colCompradas"].Value = "0";
-            novaLinha.Cells["colVendidas"].Value = "0";
-
-            AtualizarTotalItens();
+            lblTotalItens.Text = $"Total de itens: {dgvEstoque.Rows.Count}";
         }
 
-        //Para que a coluna Referência comece sempre com o "#"
         private void dgvEstoque_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (dgvEstoque.Columns[e.ColumnIndex].Name == "colReferencia")
+            if (dgvEstoque.Columns[e.ColumnIndex].Name == "referencia")
             {
                 string novaEntrada = e.FormattedValue?.ToString() ?? "";
-                string valorAtual = dgvEstoque.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString() ?? "";
-
-                // Ignora validação se a célula não foi editada de verdade
-                if (!dgvEstoque.IsCurrentCellDirty)
-                    return;
-
-                // Permite campo vazio (não obriga digitar na hora da navegação)
-                if (string.IsNullOrWhiteSpace(novaEntrada))
+                if (!dgvEstoque.IsCurrentCellDirty || string.IsNullOrWhiteSpace(novaEntrada))
                     return;
 
                 if (!novaEntrada.StartsWith("#"))
                 {
-                    MessageBox.Show(
-                        "A referência deve começar com '#'. Exemplo: #1234 ou #Produto",
-                        "Campo inválido",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    MessageBox.Show("A referência deve começar com '#'.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     e.Cancel = true;
                 }
             }
         }
-        private void TbReferencia_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void dgvEstoque_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            TextBox tb = sender as TextBox;
-
-            // Impede apagar o '#'
-            if (tb.SelectionStart == 0 && e.KeyChar == (char)Keys.Back)
+            if (e.Control is TextBox tb)
             {
-                e.Handled = true;
-            }
+                tb.KeyPress -= TbMoeda_KeyPress;
+                tb.KeyPress -= TbSomenteNumeros_KeyPress;
 
-            // Impede digitar outro '#' no começo
-            if (tb.SelectionStart == 0 && e.KeyChar == '#')
-            {
-                e.Handled = true;
+                string nomeColuna = dgvEstoque.CurrentCell.OwningColumn.Name;
+
+                if (nomeColuna == "preco_compra" || nomeColuna == "preco_venda" || nomeColuna == "preco_atacado" || nomeColuna == "preco_varejo")
+                    tb.KeyPress += TbMoeda_KeyPress;
+                else if (nomeColuna == "estoque" || nomeColuna == "fornecido" || nomeColuna == "carteira" || nomeColuna == "compradas" || nomeColuna == "vendidas")
+                    tb.KeyPress += TbSomenteNumeros_KeyPress;
             }
         }
-        private void TbData_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void TbMoeda_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox tb = sender as TextBox;
+            string texto = new string(tb.Text.Where(char.IsDigit).ToArray());
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
                 return;
             }
 
-            if (char.IsDigit(e.KeyChar))
+            if (e.KeyChar == (char)Keys.Back && texto.Length > 0)
             {
-                if (tb.Text.Length == 2 || tb.Text.Length == 5)
-                {
-                    tb.Text += "/";
-                    tb.SelectionStart = tb.Text.Length;
-                }
+                texto = texto[..^1];
+                e.Handled = true;
             }
-        }
-        private void TbMoeda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-
-            // Permite apenas números, controle e uma única vírgula
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            else if (char.IsDigit(e.KeyChar))
             {
+                texto += e.KeyChar;
                 e.Handled = true;
             }
 
-            // Impede múltiplas vírgulas
-            if (e.KeyChar == ',' && tb.Text.Contains(","))
+            if (decimal.TryParse(texto, out decimal valor))
             {
-                e.Handled = true;
-            }
-        }
-
-        private void TbMoeda_Leave(object sender, EventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-
-            // Remove símbolo e espaços
-            string textoLimpo = tb.Text.Replace("R$", "")
-                                        .Replace(" ", "")
-                                        .Trim();
-
-            // Conversão para real
-            if (decimal.TryParse(textoLimpo, out decimal valor))
-            {
+                valor /= 100;
                 tb.Text = valor.ToString("C2", new System.Globalization.CultureInfo("pt-BR"));
-            }
-            else
-            {
-                tb.Text = "R$0,00";
-            }
-        }
-        private void TbReferencia_TextChanged(object sender, EventArgs e)
-        {
-            if (!isReferenciaColuna) return;
-
-            TextBox tb = sender as TextBox;
-
-            if (!tb.Text.StartsWith("#"))
-            {
-                tb.Text = "#" + tb.Text.Replace("#", "");
                 tb.SelectionStart = tb.Text.Length;
             }
         }
-        private void dgvEstoque_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+
+        private void TbSomenteNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.Control is TextBox tb)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private bool ObterDecimal(string mensagem, out decimal valor)
+        {
+            valor = 0;
+            while (true)
             {
-                // 🔴 Limpa sempre os eventos
-                tb.KeyPress -= TbData_KeyPress;
-                tb.KeyPress -= TbMoeda_KeyPress;
-                tb.KeyPress -= TbReferencia_KeyPress;
+                string input = Microsoft.VisualBasic.Interaction.InputBox(mensagem, "Valor", "0");
 
-                tb.Leave -= TbData_Leave;
-                tb.Leave -= TbMoeda_Leave;
+                if (string.IsNullOrWhiteSpace(input)) return false;
 
-                tb.TextChanged -= TbReferencia_TextChanged;
+                if (decimal.TryParse(input.Replace("R$", "").Trim(), out valor))
+                    return true;
 
-                string nomeColuna = dgvEstoque.CurrentCell.OwningColumn.Name;
-
-                isReferenciaColuna = false; // reset padrão
-
-                if (nomeColuna == "colDataCompra" || nomeColuna == "colDataVenda")
-                {
-                    tb.MaxLength = 10;
-                    tb.KeyPress += TbData_KeyPress;
-                    tb.Leave += TbData_Leave;
-                }
-                else if (nomeColuna == "colAtacado" || nomeColuna == "colVarejo")
-                {
-                    tb.KeyPress += TbMoeda_KeyPress;
-                    tb.Leave += TbMoeda_Leave;
-                }
-                else if (nomeColuna == "colReferencia")
-                {
-                    isReferenciaColuna = true;
-
-                    tb.KeyPress += TbReferencia_KeyPress;
-                    tb.TextChanged += TbReferencia_TextChanged;
-
-                    // Preenche automaticamente com # apenas se estiver vazio
-                    if (string.IsNullOrWhiteSpace(tb.Text))
-                    {
-                        tb.Text = "#";
-                        tb.SelectionStart = tb.Text.Length;
-                    }
-                }
+                MessageBox.Show("Digite um valor numérico válido. Ex: 15,50");
             }
         }
 
+        private bool ObterInteiro(string mensagem, out int valor)
+        {
+            valor = 0;
+            string input = Microsoft.VisualBasic.Interaction.InputBox(mensagem, "Número Inteiro", "0");
+
+            if (string.IsNullOrWhiteSpace(input)) return false;
+
+            if (!int.TryParse(input, out valor))
+            {
+                MessageBox.Show("Digite apenas números inteiros.");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnNovoProduto_Click(object sender, EventArgs e)
+        {
+            string referencia = Microsoft.VisualBasic.Interaction.InputBox("Digite a referência do produto (ex: #1234):", "Referência", "#" + new Random().Next(1000, 9999));
+            if (string.IsNullOrWhiteSpace(referencia) || !referencia.StartsWith("#"))
+            {
+                MessageBox.Show("A Referência é obrigatória e deve começar com '#'.");
+                return;
+            }
+
+            string descricao = Microsoft.VisualBasic.Interaction.InputBox("Digite a descrição do produto:", "Descrição", "Novo Produto");
+            if (string.IsNullOrWhiteSpace(descricao)) descricao = "Novo Produto";
+
+            if (!ObterDecimal("Unit. U.Compra (ex: 10,50):", out decimal precoCompra)) return;
+            if (!ObterDecimal("U. Venda (ex: 15,00):", out decimal precoVenda)) return;
+            if (!ObterDecimal("Preço Atacado (ex: 12,00):", out decimal precoAtacado)) return;
+            if (!ObterDecimal("Preço Varejo (ex: 16,00):", out decimal precoVarejo)) return;
+            if (!ObterInteiro("Estoque inicial:", out int estoque)) return;
+
+            ProdutoDAL dal = new ProdutoDAL();
+            string dataCompra = DateTime.Now.ToString("dd/MM/yyyy");
+            string dataVenda = "";
+
+            dal.InserirProduto(referencia, descricao, precoCompra, precoVenda, precoAtacado, precoVarejo, estoque, dataCompra, dataVenda);
+
+            CarregarDados();
+            MessageBox.Show("Produto adicionado com sucesso!");
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            dgvEstoque.ReadOnly = false;
+        }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -238,116 +195,75 @@ namespace ProjetoPDV_Nathan
             }
             else
             {
-                MessageBox.Show("Selecione uma linha para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (dgvEstoque.SelectedRows.Count > 0)
-            {
-                dgvEstoque.ReadOnly = false;
-                MessageBox.Show("Agora você pode editar os campos diretamente na tabela.\nNão se esqueça de salvar se estiver usando banco depois.");
-            }
-            else
-            {
-                MessageBox.Show("Selecione uma linha para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um item para excluir.");
             }
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            if (dgvEstoque.SelectedRows.Count > 0)
+            if (dgvEstoque.SelectedRows.Count == 0)
             {
-                string input = Microsoft.VisualBasic.Interaction.InputBox("Informe a quantidade a comprar:", "Comprar Produto", "1");
-
-                if (int.TryParse(input, out int qtdComprada))
-                {
-                    DataGridViewRow linha = dgvEstoque.SelectedRows[0];
-
-                    int estoqueAtual = int.Parse(linha.Cells["colEstoque"].Value.ToString());
-                    int totalComprado = int.Parse(linha.Cells["colCompradas"].Value.ToString());
-
-                    linha.Cells["colEstoque"].Value = (estoqueAtual + qtdComprada).ToString();
-                    linha.Cells["colCompradas"].Value = (totalComprado + qtdComprada).ToString();
-                    linha.Cells["colDataCompra"].Value = DateTime.Now.ToShortDateString();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Selecione um item para comprar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-            private void TbData_Leave(object sender, EventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-
-            // Nome da coluna atual
-            string nomeColuna = dgvEstoque.CurrentCell.OwningColumn.Name;
-
-            // Se for Data de Venda e estiver vazio, não precisa validar
-            if (nomeColuna == "colDataVenda" && string.IsNullOrWhiteSpace(tb.Text))
-            {
+                MessageBox.Show("Selecione um item para comprar.");
                 return;
             }
 
-            if (!DateTime.TryParseExact(tb.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime data))
+            var row = dgvEstoque.SelectedRows[0];
+            string tipo = Microsoft.VisualBasic.Interaction.InputBox("Digite o tipo (Fornecido, Carteira ou Comprado):", "Tipo", "Comprado");
+
+            if (string.IsNullOrWhiteSpace(tipo)) return;
+
+            string input = Microsoft.VisualBasic.Interaction.InputBox("Quantidade:", "Entrada", "1");
+            if (!int.TryParse(input, out int qtd) || qtd <= 0) return;
+
+            int estoqueAtual = int.Parse(row.Cells["estoque"].Value.ToString());
+            row.Cells["estoque"].Value = estoqueAtual + qtd;
+
+            if (tipo.Equals("Fornecido", StringComparison.OrdinalIgnoreCase))
             {
-                MessageBox.Show("Data inválida. Verifique o dia, o mês e o ano (Ex: 23/05/2025).", "Data inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tb.Focus(); // Força o usuário a corrigir
+                int fornecido = int.Parse(row.Cells["fornecido"].Value.ToString());
+                row.Cells["fornecido"].Value = fornecido + qtd;
             }
+            else if (tipo.Equals("Carteira", StringComparison.OrdinalIgnoreCase))
+            {
+                int carteira = int.Parse(row.Cells["carteira"].Value.ToString());
+                int compradas = int.Parse(row.Cells["compradas"].Value.ToString());
+
+                row.Cells["carteira"].Value = carteira + qtd;
+                row.Cells["compradas"].Value = compradas + qtd;
+            }
+            else if (tipo.Equals("Comprado", StringComparison.OrdinalIgnoreCase))
+            {
+                int compradas = int.Parse(row.Cells["compradas"].Value.ToString());
+                row.Cells["compradas"].Value = compradas + qtd;
+            }
+
+            row.Cells["unit_compra"].Value = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void btnVender_Click(object sender, EventArgs e)
         {
-            if (dgvEstoque.SelectedRows.Count > 0)
+            if (dgvEstoque.SelectedRows.Count == 0)
             {
-                string input = Microsoft.VisualBasic.Interaction.InputBox("Informe a quantidade a vender:", "Vender Produto", "1");
-
-                if (int.TryParse(input, out int qtdVendida))
-                {
-                    DataGridViewRow linha = dgvEstoque.SelectedRows[0];
-
-                    int estoqueAtual = int.Parse(linha.Cells["colEstoque"].Value.ToString());
-                    int totalVendido = int.Parse(linha.Cells["colVendidas"].Value.ToString());
-
-                    if (qtdVendida <= 0)
-                    {
-                        MessageBox.Show("A quantidade deve ser maior que zero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    if (estoqueAtual < qtdVendida)
-                    {
-                        MessageBox.Show("Estoque insuficiente para essa venda.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Atualiza estoque e vendas
-                    linha.Cells["colEstoque"].Value = (estoqueAtual - qtdVendida).ToString();
-                    linha.Cells["colVendidas"].Value = (totalVendido + qtdVendida).ToString();
-                    linha.Cells["colDataVenda"].Value = DateTime.Now.ToShortDateString();
-                }
+                MessageBox.Show("Selecione um item para vender.");
+                return;
             }
-            else
+
+            var row = dgvEstoque.SelectedRows[0];
+            string input = Microsoft.VisualBasic.Interaction.InputBox("Quantidade vendida:", "Venda", "1");
+            if (!int.TryParse(input, out int qtd) || qtd <= 0) return;
+
+            int estoqueAtual = int.Parse(row.Cells["estoque"].Value.ToString());
+            if (estoqueAtual < qtd)
             {
-                MessageBox.Show("Selecione um item para vender.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Estoque insuficiente.");
+                return;
             }
-        }
 
-        private void lblTotalItens_Click(object sender, EventArgs e)
-        {            
+            row.Cells["estoque"].Value = estoqueAtual - qtd;
+            int vendidas = int.Parse(row.Cells["vendidas"].Value.ToString());
+            row.Cells["vendidas"].Value = vendidas + qtd;
 
-        }
-
-        private void tableLayoutPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
+            row.Cells["unit_venda"].Value = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
-
-}    
-
-
-
+}

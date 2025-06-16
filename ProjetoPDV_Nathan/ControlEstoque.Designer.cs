@@ -36,9 +36,9 @@
             this.btnVender = new System.Windows.Forms.Button();
             this.lblTotalItens = new System.Windows.Forms.Label();
             this.panelRodape = new System.Windows.Forms.Panel();
-            this.tableLayoutPrincipal = new System.Windows.Forms.TableLayoutPanel();
             this.txtboxPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
+            this.tableLayoutPrincipal = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.panelRodape.SuspendLayout();
             this.tableLayoutPrincipal.SuspendLayout();
@@ -58,7 +58,6 @@
             this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEstoque.Size = new System.Drawing.Size(1047, 550);
             this.dgvEstoque.TabIndex = 0;
-            this.dgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstoque_CellContentClick);
             // 
             // btnNovoProduto
             // 
@@ -148,23 +147,6 @@
             this.panelRodape.Size = new System.Drawing.Size(1047, 50);
             this.panelRodape.TabIndex = 7;
             // 
-            // tableLayoutPrincipal
-            // 
-            this.tableLayoutPrincipal.ColumnCount = 1;
-            this.tableLayoutPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPrincipal.Controls.Add(this.panelRodape, 0, 1);
-            this.tableLayoutPrincipal.Controls.Add(this.dgvEstoque, 0, 0);
-            this.tableLayoutPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPrincipal.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPrincipal.Name = "tableLayoutPrincipal";
-            this.tableLayoutPrincipal.RowCount = 2;
-            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPrincipal.Size = new System.Drawing.Size(1047, 600);
-            this.tableLayoutPrincipal.TabIndex = 8;
-            this.tableLayoutPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPrincipal_Paint);
-            // 
             // txtboxPesquisa
             // 
             this.txtboxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -183,12 +165,28 @@
             this.lblPesquisa.TabIndex = 10;
             this.lblPesquisa.Text = "Pesquisar:";
             // 
-            // Controle1
+            // tableLayoutPrincipal
+            // 
+            this.tableLayoutPrincipal.ColumnCount = 1;
+            this.tableLayoutPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPrincipal.Controls.Add(this.panelRodape, 0, 1);
+            this.tableLayoutPrincipal.Controls.Add(this.dgvEstoque, 0, 0);
+            this.tableLayoutPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPrincipal.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPrincipal.Name = "tableLayoutPrincipal";
+            this.tableLayoutPrincipal.RowCount = 2;
+            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPrincipal.Size = new System.Drawing.Size(1047, 600);
+            this.tableLayoutPrincipal.TabIndex = 8;
+            // 
+            // ControlEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPrincipal);
-            this.Name = "Controle1";
+            this.Name = "ControlEstoque";
             this.Size = new System.Drawing.Size(1047, 600);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.panelRodape.ResumeLayout(false);
