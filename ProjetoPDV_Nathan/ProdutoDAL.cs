@@ -2,6 +2,12 @@
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ProjetoPDV_Nathan
 {
@@ -9,23 +15,23 @@ namespace ProjetoPDV_Nathan
     {
         private string conexao = $"Data Source={Application.StartupPath}\\dadosPDV.db";
 
-        public void InserirProduto(string referencia, string descricao, decimal precoCompra, decimal precoVenda, decimal precoAtacado, decimal precoVarejo, int estoque)
+        public void InserirProduto(string referencia, string descricao, string unitCompra, string unitVenda, decimal precoAtacado, decimal precoVarejo, int estoque)
         {
             using (SQLiteConnection conn = new SQLiteConnection(conexao))
             {
                 conn.Open();
 
                 string sql = @"INSERT INTO Produtos 
-                (referencia, descricao, unit_compra, unit_venda, preco_atacado, preco_varejo, estoque, fornecido, carteira, compradas, vendidas) 
-                VALUES 
-                (@referencia, @descricao, @unitCompra, @unitVenda, @precoAtacado, @precoVarejo, @estoque, 0, 0, 0, 0)";
+        (referencia, descricao, unit_compra, unit_venda, preco_atacado, preco_varejo, estoque, fornecido, carteira, compradas, vendidas) 
+        VALUES 
+        (@referencia, @descricao, @unitCompra, @unitVenda, @precoAtacado, @precoVarejo, @estoque, 0, 0, 0, 0)";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@referencia", referencia);
                     cmd.Parameters.AddWithValue("@descricao", descricao);
-                    cmd.Parameters.AddWithValue("@unitCompra", precoCompra);
-                    cmd.Parameters.AddWithValue("@unitVenda", precoVenda);
+                    cmd.Parameters.AddWithValue("@unitCompra", unitCompra); // agora string (yyyy-MM-dd)
+                    cmd.Parameters.AddWithValue("@unitVenda", unitVenda);   // string ou vazio
                     cmd.Parameters.AddWithValue("@precoAtacado", precoAtacado);
                     cmd.Parameters.AddWithValue("@precoVarejo", precoVarejo);
                     cmd.Parameters.AddWithValue("@estoque", estoque);
@@ -34,6 +40,8 @@ namespace ProjetoPDV_Nathan
                 }
             }
         }
+
+
 
         public void AtualizarProduto(DataRow row)
         {

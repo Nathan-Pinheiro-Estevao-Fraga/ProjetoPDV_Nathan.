@@ -7,12 +7,22 @@ using System.Windows.Forms;
 namespace ProjetoPDV_Nathan
 {
     public partial class ControlEstoque : UserControl
-    {
+    {       
         public ControlEstoque()
         {
             InitializeComponent();
-            this.Load += Controle1_Load;
 
+            // Eventos
+            this.Load += Controle1_Load;
+            this.btnSalvarAlterações.Click += btnSalvarAlterações_Click;
+
+            this.btnNovoProduto.Click += btnNovoProduto_Click;
+            this.btnEditar.Click += btnEditar_Click;
+            this.btnExcluir.Click += btnExcluir_Click;
+            this.btnComprar.Click += btnComprar_Click;
+            this.btnVender.Click += btnVender_Click;
+
+            dgvEstoque.CellBeginEdit += dgvEstoque_CellBeginEdit;
             dgvEstoque.CellValidating += dgvEstoque_CellValidating;
             dgvEstoque.EditingControlShowing += dgvEstoque_EditingControlShowing;
         }
@@ -21,7 +31,45 @@ namespace ProjetoPDV_Nathan
         {
             CarregarDados();
         }
+        private DateTimePicker dtp = new DateTimePicker();
 
+        private void dtp_OnTextChange(object sender, EventArgs e)
+        {
+            dgvEstoque.CurrentCell.Value = dtp.Text;
+        }
+        private void dtp_CloseUp(object sender, EventArgs e)
+        {
+            dtp.Visible = false;
+        }
+
+        private void dgvEstoque_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvEstoque.Columns[e.ColumnIndex].Name == "unit_compra")
+            {
+                Rectangle _dtpRect = dgvEstoque.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+
+                dtp.Visible = true;
+                dtp.Format = DateTimePickerFormat.Short;
+                dtp.Size = new Size(_dtpRect.Width, _dtpRect.Height);
+                dtp.Location = new Point(_dtpRect.X, _dtpRect.Y);
+
+                dtp.CloseUp -= dtp_CloseUp;
+                dtp.TextChanged -= dtp_OnTextChange;
+                dtp.CloseUp += dtp_CloseUp;
+                dtp.TextChanged += dtp_OnTextChange;
+
+                object cellValue = dgvEstoque.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                if (cellValue != null && DateTime.TryParse(cellValue.ToString(), out DateTime data))
+                    dtp.Value = data;
+                else
+                    dtp.Value = DateTime.Today;
+
+                dgvEstoque.Controls.Add(dtp);
+                dtp.BringToFront();
+            }
+        }
         private void CarregarDados()
         {
             ProdutoDAL dal = new ProdutoDAL();
@@ -29,6 +77,7 @@ namespace ProjetoPDV_Nathan
             dgvEstoque.DataSource = tabela;
 
             // Configura colunas
+            dgvEstoque.Columns["unit_compra"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvEstoque.Columns["referencia"].HeaderText = "Referência";
             dgvEstoque.Columns["descricao"].HeaderText = "Descrição";
             dgvEstoque.Columns["unit_compra"].HeaderText = "Unit.U.Compra";
@@ -46,8 +95,26 @@ namespace ProjetoPDV_Nathan
             dgvEstoque.DefaultCellStyle.SelectionBackColor = Color.Yellow;
             dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;
 
+            foreach (DataGridViewRow row in dgvEstoque.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string rawCompra = row.Cells["unit_compra"].Value?.ToString();
+                    if (DateTime.TryParse(rawCompra, out DateTime dataCompra))
+                    {
+                        row.Cells["unit_compra"].Value = dataCompra.ToString("dd/MM/yyyy");
+                    }
+
+                    string rawVenda = row.Cells["unit_venda"].Value?.ToString();
+                    if (DateTime.TryParse(rawVenda, out DateTime dataVenda))
+                    {
+                        row.Cells["unit_venda"].Value = dataVenda.ToString("dd/MM/yyyy");
+                    }
+                }
+            }
             AtualizarTotalItens();
         }
+
 
         private void AtualizarTotalItens()
         {
@@ -99,7 +166,7 @@ namespace ProjetoPDV_Nathan
 
             if (e.KeyChar == (char)Keys.Back && texto.Length > 0)
             {
-                texto = texto[..^1];
+                texto = texto.Substring(0, texto.Length - 1);
                 e.Handled = true;
             }
             else if (char.IsDigit(e.KeyChar))
@@ -153,6 +220,7 @@ namespace ProjetoPDV_Nathan
             return true;
         }
 
+
         private void btnNovoProduto_Click(object sender, EventArgs e)
         {
             string referencia = Microsoft.VisualBasic.Interaction.InputBox("Digite a referência do produto (ex: #1234):", "Referência", "#" + new Random().Next(1000, 9999));
@@ -165,17 +233,20 @@ namespace ProjetoPDV_Nathan
             string descricao = Microsoft.VisualBasic.Interaction.InputBox("Digite a descrição do produto:", "Descrição", "Novo Produto");
             if (string.IsNullOrWhiteSpace(descricao)) descricao = "Novo Produto";
 
-            if (!ObterDecimal("Unit. U.Compra (ex: 10,50):", out decimal precoCompra)) return;
-            if (!ObterDecimal("U. Venda (ex: 15,00):", out decimal precoVenda)) return;
-            if (!ObterDecimal("Preço Atacado (ex: 12,00):", out decimal precoAtacado)) return;
-            if (!ObterDecimal("Preço Varejo (ex: 16,00):", out decimal precoVarejo)) return;
+            DateTime precoCompra = DateTime.Now;
+            string precoVenda = ""; // vazio, será preenchido apenas quando vender
+
+            if (!ObterDecimal("Preço Atacado (ex: R$12,00):", out decimal precoAtacado)) return;
+            if (!ObterDecimal("Preço Varejo (ex: R$16,00):", out decimal precoVarejo)) return;
             if (!ObterInteiro("Estoque inicial:", out int estoque)) return;
 
             ProdutoDAL dal = new ProdutoDAL();
-            string dataCompra = DateTime.Now.ToString("dd/MM/yyyy");
-            string dataVenda = "";
 
-            dal.InserirProduto(referencia, descricao, precoCompra, precoVenda, precoAtacado, precoVarejo, estoque, dataCompra, dataVenda);
+            string unitCompra = DateTime.Now.ToString("yyyy-MM-dd");
+            string unitVenda = ""; // ainda não houve venda
+
+            dal.InserirProduto(referencia, descricao, unitCompra, unitVenda, precoAtacado, precoVarejo, estoque);
+
 
             CarregarDados();
             MessageBox.Show("Produto adicionado com sucesso!");
@@ -208,9 +279,10 @@ namespace ProjetoPDV_Nathan
             }
 
             var row = dgvEstoque.SelectedRows[0];
-            string tipo = Microsoft.VisualBasic.Interaction.InputBox("Digite o tipo (Fornecido, Carteira ou Comprado):", "Tipo", "Comprado");
+            FormTipoCompra formTipo = new FormTipoCompra();
+            if (formTipo.ShowDialog() != DialogResult.OK) return;
 
-            if (string.IsNullOrWhiteSpace(tipo)) return;
+            string tipo = formTipo.TipoSelecionado;
 
             string input = Microsoft.VisualBasic.Interaction.InputBox("Quantidade:", "Entrada", "1");
             if (!int.TryParse(input, out int qtd) || qtd <= 0) return;
@@ -250,7 +322,8 @@ namespace ProjetoPDV_Nathan
 
             var row = dgvEstoque.SelectedRows[0];
             string input = Microsoft.VisualBasic.Interaction.InputBox("Quantidade vendida:", "Venda", "1");
-            if (!int.TryParse(input, out int qtd) || qtd <= 0) return;
+            if (!int.TryParse(input, out int qtd) || qtd <= 0)
+                return;
 
             int estoqueAtual = int.Parse(row.Cells["estoque"].Value.ToString());
             if (estoqueAtual < qtd)
@@ -263,7 +336,41 @@ namespace ProjetoPDV_Nathan
             int vendidas = int.Parse(row.Cells["vendidas"].Value.ToString());
             row.Cells["vendidas"].Value = vendidas + qtd;
 
-            row.Cells["unit_venda"].Value = DateTime.Now.ToString("dd/MM/yyyy");
+            row.Cells["unit_venda"].Value = DateTime.Now.ToString("yyyy-MM-dd");
         }
+
+        private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSalvarAlterações_Click(object sender, EventArgs e)
+        {
+            ProdutoDAL dal = new ProdutoDAL();
+
+            foreach (DataGridViewRow row in dgvEstoque.Rows)
+            {
+                if (row.IsNewRow) continue; // Ignora a última linha vazia
+
+                try
+                {
+                    // Verifica se o DataSource é um DataTable
+                    if (row.DataBoundItem is DataRowView drv)
+                    {
+                        dal.AtualizarProduto(drv.Row); // Usa método já existente
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao salvar o item na linha {row.Index + 1}.\n\nDetalhes: {ex.Message}", "Erro ao salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+            MessageBox.Show("Alterações salvas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CarregarDados(); // Recarrega dados atualizados
+            dgvEstoque.Columns["unit_compra"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvEstoque.Columns["unit_venda"].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }      
     }
 }

@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAdicionar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAQRSURBVEhL1ZMLbFNVHMbrM4FgAokmGowmbEbjBAMSAuvW
-        2/vq+7mlsmBZYDAIrnMwixgJ23Q8AnFmW1AbdFu7wh5NmKNbu7lFFylq4jBBTXwkmwIGJkYeGW7dw/bz
-        3rtT2s7KKi4x/pIv7T3n3++Xe26v7H8Fx3HLGYaxKJVKOVmafyiKepim6dOCCCSjQuw2m+0eMjJv3CWI
-        BhJEt8Ky9HtkZn4QSukkgRDnRgZbbTPfhaN9jIymh8Oo3FKqpwcdBuVV4fPMNoNhIdkSZS+Lko1WBt49
-        LK408oCPx6iXx/MGZlLYs5LRuXHo6X2lBhqzcrPESBnEfY5hXttXxExF22ckiSkpYMZ4nimQiuZip55d
-        VmqkpxNFLwnZaaZRblFO7LKtXXDhQM6O/v0cvjq8BleOKSTJUG02fqrPRrCKxW+1Cp7U3R7p+IjkDTuL
-        3moNrvkM+NalRbkgLDEy/I1DOUsi7fyl2XclJtLCnrtYs3YBqbs9wjOqPLyJw3CjDtGgEeiJp66Yizh0
-        lF2cg497K5VMWHdIRenQt3dVccdeFYaPUbjWppIkP7sZXG7m0Ozkox+/vpIV5+CjFkVauC8TRZFW7gP4
-        /sF7hhMZ6ya7jNHfO7SY6tZLsnCnDhOndJj066fhy8gkozKf015486gCYy4Ko/UKHCoqU5Ct9BEEv8aO
-        LilB49fivjIvIF/Nnxh8/KlqnD/I4npNDs5WGLD0iSrIdScDdH5PllSUDgho16cQRdFvWqmwBIsUlsAf
-        Cks3li0/gqef3Q8rX4HMZ6rx5HN1oKwBUJbAuDCjJXVzg/YsJ/xKIKAB/OLfe4WGMvZmCkWTUqEQhbkL
-        qwsOQl6xCfTbVjCuPDBvbgVddgSK/K7rOfruJaQuNdQA7l3T8P0rWa+2/gKXDGKmXXdHl+7uGMmtHPRT
-        eTMiKq8bdKUTrFudMkzNZuQWHneS2r9iORPOMJ0e/0bbfwP3F7qx+UA1Bo6ug6ayHouKW2H6ZAz6thHQ
-        G/pA76lKKv/04mdStnRuv7VG1224QKqTMZzFQlNo/AdzKAwx8rbzWOw4ifvsbjy46xTozhFpXYyudQhs
-        gz5JFqO8d3fSOudRq4kijlCyPVY2V3Q9fVJRge8FvPOFS0qMzu/80rUjUEaEqneJIo4pFG5OVZwqOv9x
-        qUi8i7/Dc84rzTBNql6iiGMOjX+UqjhVdIEOqWhHVymGrg5LiXFp9LJ0Xft5PZGp24gijjk0YbSEwtvS
-        if7D/qqZI4onxuxnxno0LxLFncM2qYOJpTGSZaqR7PdND5Cf3Dlqr/oR4Yh+jBWbW/KlqDw66Zpxq8Y4
-        j4Yi4/8eTYPmIUHoEcqnYlIiGmDcmhVkbH6hmqjFTKM6l3bzKsqreZQs/5fIZH8C+5CJfbuukAEAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
 </root>

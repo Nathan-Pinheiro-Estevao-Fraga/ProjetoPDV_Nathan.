@@ -19,6 +19,8 @@ namespace ProjetoPDV_Nathan
             InitializeComponent();
             AtualizarTotalItens();
             this.Load += Controle3_Load;
+            btnSalvar.Click += btnSalvar_Click;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
         }
         private void AtualizarTotalItens()
         {
@@ -30,6 +32,8 @@ namespace ProjetoPDV_Nathan
 
         private void Controle3_Load(object sender, EventArgs e)
         {
+            //habilita edição
+            dgvClientes.ReadOnly = false;            
 
             // Estilo e comportamento    
             dgvClientes.AllowUserToAddRows = false;
@@ -45,6 +49,8 @@ namespace ProjetoPDV_Nathan
             dgvClientes.Columns.Add("colEstado", "Estado");
             dgvClientes.Columns.Add("colCidade", "Cidade");
             dgvClientes.Columns.Add("colEmail", "E-mail");
+
+            dgvClientes.Columns["colID"].ReadOnly = true;
 
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.DefaultCellStyle.BackColor = Color.LightBlue;
@@ -66,7 +72,32 @@ namespace ProjetoPDV_Nathan
             cmbCamposFiltro.SelectedIndex = 0; // Começa com a instrução
 
             this.Controls.Add(cmbCamposFiltro);
+
+
+            CarregarDadosClientes();
         }
+        private void CarregarDadosClientes()
+        {
+            ClienteDAL dal = new ClienteDAL();
+            DataTable tabela = dal.ListarClientes();
+
+            dgvClientes.Rows.Clear();
+
+            foreach (DataRow row in tabela.Rows)
+            {
+                dgvClientes.Rows.Add(
+                    row["id"],
+                    row["nome"],
+                    row["telefone"],
+                    row["estado"],
+                    row["cidade"],
+                    row["email"]
+                );
+            }
+            dgvClientes.Columns["colID"].ReadOnly = true;
+            AtualizarTotalItens();
+        }
+
         private void btnNovoProduto_Click(object sender, EventArgs e)
         {
             int index = dgvClientes.Rows.Add();
@@ -106,8 +137,13 @@ namespace ProjetoPDV_Nathan
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                dgvClientes.Rows.RemoveAt(dgvClientes.SelectedRows[0].Index);
-                AtualizarTotalItens();
+                var row = dgvClientes.SelectedRows[0];
+                if (int.TryParse(row.Cells["colID"].Value?.ToString(), out int id))
+                {
+                    ClienteDAL dal = new ClienteDAL();
+                    dal.ExcluirCliente(id);
+                    CarregarDadosClientes();
+                }
             }
             else
             {
@@ -124,8 +160,16 @@ namespace ProjetoPDV_Nathan
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            int index = dgvClientes.Rows.Add();
-            AtualizarTotalItens();
+            ClienteDAL dal = new ClienteDAL();
+
+            string nome = "Novo Cliente";
+            string telefone = "(00) 00000-0000";
+            string estado = "SP";
+            string cidade = "São Paulo";
+            string email = "exemplo@email.com";
+
+            dal.InserirCliente(nome, telefone, estado, cidade, email);
+            CarregarDadosClientes();
         }
 
 
@@ -182,6 +226,65 @@ namespace ProjetoPDV_Nathan
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ClienteDAL dal = new ClienteDAL();
+
+            foreach (DataGridViewRow row in dgvClientes.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                try
+                {
+                    int id = int.TryParse(row.Cells["colID"].Value?.ToString(), out int val) ? val : 0;
+                    string nome = row.Cells["colCliente"].Value?.ToString() ?? "";
+                    string telefone = row.Cells["colTelefone"].Value?.ToString() ?? "";
+                    string estado = row.Cells["colEstado"].Value?.ToString() ?? "";
+                    string cidade = row.Cells["colCidade"].Value?.ToString() ?? "";
+                    string email = row.Cells["colEmail"].Value?.ToString() ?? "";
+
+                    if (id > 0)
+                        dal.AtualizarCliente(id, nome, telefone, estado, cidade, email);
+                    else
+                        dal.InserirCliente(nome, telefone, estado, cidade, email);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao salvar cliente na linha {row.Index + 1}: {ex.Message}");
+                }
+            }
+
+            MessageBox.Show("Clientes salvos com sucesso!");            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var row = dgvClientes.SelectedRows[0];
+            string nome = row.Cells["colCliente"].Value?.ToString() ?? "";
+            string telefone = row.Cells["colTelefone"].Value?.ToString() ?? "";
+            string estado = row.Cells["colEstado"].Value?.ToString() ?? "";
+            string cidade = row.Cells["colCidade"].Value?.ToString() ?? "";
+            string email = row.Cells["colEmail"].Value?.ToString() ?? "";
+
+            using (FormEditarCliente form = new FormEditarCliente(nome, telefone, estado, cidade, email))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    row.Cells["colCliente"].Value = form.Nome;
+                    row.Cells["colTelefone"].Value = form.Telefone;
+                    row.Cells["colEstado"].Value = form.Estado;
+                    row.Cells["colCidade"].Value = form.Cidade;
+                    row.Cells["colEmail"].Value = form.Email;
+                }
+            }
         }
     }
 }

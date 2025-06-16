@@ -23,16 +23,16 @@ namespace ProjetoPDV_Nathan
         private void Controle2_Load(object sender, EventArgs e)
         {
             
-        }        
+        }
 
-        
+
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            controleEstoque = new ControlEstoque();
-            controleDashboard = new ControlDashboard();                        
-            controleClientes = new ControlClientes();            
-        }                
+            controleDashboard = new ControlDashboard();
+            controleClientes = new ControlClientes();
+            controleEstoque = new ControlEstoque(); // ✅ Adicione esta linha
+        }
         private void btnMenu_Click(object sender, EventArgs e)
         {
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlClientes));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelComando = new System.Windows.Forms.Panel();
             this.txtboxPesquisa = new System.Windows.Forms.TextBox();
@@ -35,8 +36,9 @@
             this.lblTotalClientes = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnFiltro = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelComando.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -54,25 +56,26 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1047, 600);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panelComando
             // 
+            this.panelComando.Controls.Add(this.btnEditar);
+            this.panelComando.Controls.Add(this.btnSalvar);
             this.panelComando.Controls.Add(this.txtboxPesquisa);
             this.panelComando.Controls.Add(this.lblPesquisa);
             this.panelComando.Controls.Add(this.lblTotalClientes);
             this.panelComando.Controls.Add(this.btnExcluir);
             this.panelComando.Controls.Add(this.btnAdicionar);
-            this.panelComando.Controls.Add(this.btnFiltro);
             this.panelComando.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelComando.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelComando.Location = new System.Drawing.Point(0, 550);
+            this.panelComando.Location = new System.Drawing.Point(0, 540);
             this.panelComando.Margin = new System.Windows.Forms.Padding(0);
             this.panelComando.Name = "panelComando";
-            this.panelComando.Size = new System.Drawing.Size(1047, 50);
+            this.panelComando.Size = new System.Drawing.Size(1047, 60);
             this.panelComando.TabIndex = 0;
             // 
             // txtboxPesquisa
@@ -109,11 +112,14 @@
             // 
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnExcluir.Location = new System.Drawing.Point(731, 10);
+            this.btnExcluir.Image = global::ProjetoPDV_Nathan.Properties.Resources.icons8_fechar_janela_27;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(731, 5);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(89, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(89, 48);
             this.btnExcluir.TabIndex = 2;
-            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Text = "Excluir item";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -121,25 +127,16 @@
             // 
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAdicionar.Location = new System.Drawing.Point(636, 11);
+            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
+            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdicionar.Location = new System.Drawing.Point(636, 6);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(89, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(89, 48);
             this.btnAdicionar.TabIndex = 1;
-            this.btnAdicionar.Text = "Novo";
+            this.btnAdicionar.Text = "Novo Cliente";
+            this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // btnFiltro
-            // 
-            this.btnFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnFiltro.Location = new System.Drawing.Point(826, 9);
-            this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(89, 23);
-            this.btnFiltro.TabIndex = 0;
-            this.btnFiltro.Text = "Filtro";
-            this.btnFiltro.UseVisualStyleBackColor = true;
-            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
             // dgvClientes
             // 
@@ -150,16 +147,46 @@
             this.dgvClientes.Location = new System.Drawing.Point(0, 0);
             this.dgvClientes.Margin = new System.Windows.Forms.Padding(0);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(1047, 550);
+            this.dgvClientes.Size = new System.Drawing.Size(1047, 540);
             this.dgvClientes.TabIndex = 1;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Controle3
+            // btnSalvar
+            // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.Image = global::ProjetoPDV_Nathan.Properties.Resources.icons8_salvar_27;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(826, 5);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(89, 48);
+            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.Image = global::ProjetoPDV_Nathan.Properties.Resources.icons8_lápis_27;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.Location = new System.Drawing.Point(921, 5);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(89, 48);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // ControlClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Controle3";
+            this.Name = "ControlClientes";
             this.Size = new System.Drawing.Size(1047, 600);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelComando.ResumeLayout(false);
@@ -176,9 +203,10 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Label lblTotalClientes;
         private System.Windows.Forms.TextBox txtboxPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
