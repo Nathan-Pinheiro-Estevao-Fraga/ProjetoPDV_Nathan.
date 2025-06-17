@@ -43,26 +43,26 @@
             this.btnGraficos = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.pictureBoxEstoque = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSair = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClientes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDashboard = new System.Windows.Forms.PictureBox();
-            this.pictureBoxGráficos = new System.Windows.Forms.PictureBox();
             this.LabPainel = new System.Windows.Forms.Label();
-            this.btnComprar = new System.Windows.Forms.Button();
-            this.pictureBoxComprar = new System.Windows.Forms.PictureBox();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.panelConteudo = new System.Windows.Forms.Panel();
+            this.pictureBoxComprar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGráficos = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDashboard = new System.Windows.Forms.PictureBox();
+            this.pictureBoxClientes = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSair = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEstoque = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCentralConteudo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).BeginInit();
             this.panelConteudo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoque)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -98,6 +98,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox1
             // 
@@ -269,61 +270,6 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // pictureBoxEstoque
-            // 
-            this.pictureBoxEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEstoque.Image")));
-            this.pictureBoxEstoque.Location = new System.Drawing.Point(25, 206);
-            this.pictureBoxEstoque.Name = "pictureBoxEstoque";
-            this.pictureBoxEstoque.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxEstoque.TabIndex = 8;
-            this.pictureBoxEstoque.TabStop = false;
-            this.pictureBoxEstoque.Click += new System.EventHandler(this.pictureBoxEstoque_Click);
-            // 
-            // pictureBoxSair
-            // 
-            this.pictureBoxSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSair.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSair.Image")));
-            this.pictureBoxSair.Location = new System.Drawing.Point(25, 280);
-            this.pictureBoxSair.Name = "pictureBoxSair";
-            this.pictureBoxSair.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxSair.TabIndex = 5;
-            this.pictureBoxSair.TabStop = false;
-            this.pictureBoxSair.Click += new System.EventHandler(this.pictureBoxSair_Click);
-            // 
-            // pictureBoxClientes
-            // 
-            this.pictureBoxClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClientes.Image")));
-            this.pictureBoxClientes.Location = new System.Drawing.Point(25, 131);
-            this.pictureBoxClientes.Name = "pictureBoxClientes";
-            this.pictureBoxClientes.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxClientes.TabIndex = 9;
-            this.pictureBoxClientes.TabStop = false;
-            this.pictureBoxClientes.Click += new System.EventHandler(this.pictureBoxClientes_Click);
-            // 
-            // pictureBoxDashboard
-            // 
-            this.pictureBoxDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDashboard.Image")));
-            this.pictureBoxDashboard.Location = new System.Drawing.Point(25, 94);
-            this.pictureBoxDashboard.Name = "pictureBoxDashboard";
-            this.pictureBoxDashboard.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxDashboard.TabIndex = 10;
-            this.pictureBoxDashboard.TabStop = false;
-            this.pictureBoxDashboard.Click += new System.EventHandler(this.pictureBoxDashboard_Click);
-            // 
-            // pictureBoxGráficos
-            // 
-            this.pictureBoxGráficos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxGráficos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGráficos.Image")));
-            this.pictureBoxGráficos.Location = new System.Drawing.Point(25, 243);
-            this.pictureBoxGráficos.Name = "pictureBoxGráficos";
-            this.pictureBoxGráficos.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxGráficos.TabIndex = 13;
-            this.pictureBoxGráficos.TabStop = false;
-            this.pictureBoxGráficos.Click += new System.EventHandler(this.pictureBoxGráficos_Click);
-            // 
             // LabPainel
             // 
             this.LabPainel.AutoSize = true;
@@ -335,39 +281,29 @@
             this.LabPainel.TabIndex = 1;
             this.LabPainel.Text = "PAINEL";
             // 
-            // btnComprar
+            // btnCompras
             // 
-            this.btnComprar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnComprar.FlatAppearance.BorderSize = 0;
-            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnComprar.ForeColor = System.Drawing.Color.White;
-            this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnComprar.Location = new System.Drawing.Point(0, 160);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(197, 39);
-            this.btnComprar.TabIndex = 15;
-            this.btnComprar.Text = "          Vendas";
-            this.btnComprar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxComprar
-            // 
-            this.pictureBoxComprar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxComprar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxComprar.Image")));
-            this.pictureBoxComprar.Location = new System.Drawing.Point(25, 167);
-            this.pictureBoxComprar.Name = "pictureBoxComprar";
-            this.pictureBoxComprar.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxComprar.TabIndex = 16;
-            this.pictureBoxComprar.TabStop = false;
-            this.pictureBoxComprar.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCompras.ForeColor = System.Drawing.Color.White;
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnCompras.Location = new System.Drawing.Point(0, 160);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(197, 39);
+            this.btnCompras.TabIndex = 15;
+            this.btnCompras.Text = "          Vendas";
+            this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click_1);
             // 
             // panelConteudo
             // 
             this.panelConteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panelConteudo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConteudo.Controls.Add(this.pictureBoxComprar);
-            this.panelConteudo.Controls.Add(this.btnComprar);
+            this.panelConteudo.Controls.Add(this.btnCompras);
             this.panelConteudo.Controls.Add(this.LabPainel);
             this.panelConteudo.Controls.Add(this.pictureBoxGráficos);
             this.panelConteudo.Controls.Add(this.pictureBoxDashboard);
@@ -385,6 +321,72 @@
             this.panelConteudo.Size = new System.Drawing.Size(200, 661);
             this.panelConteudo.TabIndex = 11;
             this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
+            // 
+            // pictureBoxComprar
+            // 
+            this.pictureBoxComprar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxComprar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxComprar.Image")));
+            this.pictureBoxComprar.Location = new System.Drawing.Point(25, 167);
+            this.pictureBoxComprar.Name = "pictureBoxComprar";
+            this.pictureBoxComprar.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxComprar.TabIndex = 16;
+            this.pictureBoxComprar.TabStop = false;
+            this.pictureBoxComprar.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBoxGráficos
+            // 
+            this.pictureBoxGráficos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxGráficos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGráficos.Image")));
+            this.pictureBoxGráficos.Location = new System.Drawing.Point(25, 243);
+            this.pictureBoxGráficos.Name = "pictureBoxGráficos";
+            this.pictureBoxGráficos.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxGráficos.TabIndex = 13;
+            this.pictureBoxGráficos.TabStop = false;
+            this.pictureBoxGráficos.Click += new System.EventHandler(this.pictureBoxGráficos_Click);
+            // 
+            // pictureBoxDashboard
+            // 
+            this.pictureBoxDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDashboard.Image")));
+            this.pictureBoxDashboard.Location = new System.Drawing.Point(25, 94);
+            this.pictureBoxDashboard.Name = "pictureBoxDashboard";
+            this.pictureBoxDashboard.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxDashboard.TabIndex = 10;
+            this.pictureBoxDashboard.TabStop = false;
+            this.pictureBoxDashboard.Click += new System.EventHandler(this.pictureBoxDashboard_Click);
+            // 
+            // pictureBoxClientes
+            // 
+            this.pictureBoxClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClientes.Image")));
+            this.pictureBoxClientes.Location = new System.Drawing.Point(25, 131);
+            this.pictureBoxClientes.Name = "pictureBoxClientes";
+            this.pictureBoxClientes.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxClientes.TabIndex = 9;
+            this.pictureBoxClientes.TabStop = false;
+            this.pictureBoxClientes.Click += new System.EventHandler(this.pictureBoxClientes_Click);
+            // 
+            // pictureBoxSair
+            // 
+            this.pictureBoxSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSair.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSair.Image")));
+            this.pictureBoxSair.Location = new System.Drawing.Point(25, 280);
+            this.pictureBoxSair.Name = "pictureBoxSair";
+            this.pictureBoxSair.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxSair.TabIndex = 5;
+            this.pictureBoxSair.TabStop = false;
+            this.pictureBoxSair.Click += new System.EventHandler(this.pictureBoxSair_Click);
+            // 
+            // pictureBoxEstoque
+            // 
+            this.pictureBoxEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEstoque.Image")));
+            this.pictureBoxEstoque.Location = new System.Drawing.Point(25, 206);
+            this.pictureBoxEstoque.Name = "pictureBoxEstoque";
+            this.pictureBoxEstoque.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxEstoque.TabIndex = 8;
+            this.pictureBoxEstoque.TabStop = false;
+            this.pictureBoxEstoque.Click += new System.EventHandler(this.pictureBoxEstoque_Click);
             // 
             // Tela_inicial
             // 
@@ -406,14 +408,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCentralConteudo.ResumeLayout(false);
             this.panelCentralConteudo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).EndInit();
             this.panelConteudo.ResumeLayout(false);
             this.panelConteudo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxComprar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráficos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoque)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,7 +439,7 @@
         private System.Windows.Forms.PictureBox pictureBoxDashboard;
         private System.Windows.Forms.PictureBox pictureBoxGráficos;
         private System.Windows.Forms.Label LabPainel;
-        private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.PictureBox pictureBoxComprar;
         private System.Windows.Forms.Panel panelConteudo;
         private System.Windows.Forms.PictureBox pictureBox1;

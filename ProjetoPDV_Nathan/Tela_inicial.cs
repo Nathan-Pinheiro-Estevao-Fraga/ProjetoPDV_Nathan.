@@ -14,21 +14,25 @@ namespace ProjetoPDV_Nathan
 {
     public partial class Tela_inicial : Form
     {
+        
         public Tela_inicial()
         {
             InitializeComponent();
+            controleCompras = new ControlCompras();
+            controleDashboard = new ControlDashboard();
+            controleClientes = new ControlClientes();
+            controleEstoque = new ControlEstoque();
         }
-        
+
 
         private void Controle2_Load(object sender, EventArgs e)
         {
-            
+           
         }
-
-
-
+        
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            controleCompras = new ControlCompras();
             controleDashboard = new ControlDashboard();
             controleClientes = new ControlClientes();
             controleEstoque = new ControlEstoque(); // ✅ Adicione esta linha
@@ -75,6 +79,8 @@ namespace ProjetoPDV_Nathan
 
         }
 
+        //Instância para compras
+        private ControlCompras controleCompras;
         //Instância para o carregamento do estoque
         private ControlEstoque controleEstoque;
 
@@ -184,7 +190,7 @@ namespace ProjetoPDV_Nathan
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             //Faz com que o click no picturebox seja redirecionado para o botão conrrespondente//
-            btnComprar.PerformClick();
+            btnCompras.PerformClick();
         }        
 
         private void btnRelatórios_Click(object sender, EventArgs e)
@@ -217,9 +223,20 @@ namespace ProjetoPDV_Nathan
 
         }
 
-        private void lblDataHora_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
+            CarregarControle(controleDashboard);
+        }
 
+      
+            private void btnCompras_Click(object sender, EventArgs e)
+        {
+            CarregarControle(controleCompras);
+        }
+
+        private void btnCompras_Click_1(object sender, EventArgs e)
+        {
+            CarregarControle(controleCompras);
         }
     }
 }

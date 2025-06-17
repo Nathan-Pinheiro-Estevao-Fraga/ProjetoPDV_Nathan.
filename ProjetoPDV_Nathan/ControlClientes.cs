@@ -20,9 +20,8 @@ namespace ProjetoPDV_Nathan
             InitializeComponent();
             AtualizarTotalItens();
             this.Load += Controle3_Load;            
-            btnSalvar.Click += btnSalvar_Click;
-            dgvClientes.EditingControlShowing += dgvClientes_EditingControlShowing;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);            
+            
+            dgvClientes.EditingControlShowing += dgvClientes_EditingControlShowing;                    
 
         }
         private bool filtroAtivo = false;
@@ -377,6 +376,7 @@ namespace ProjetoPDV_Nathan
             }
 
             var row = dgvClientes.SelectedRows[0];
+
             string nome = row.Cells["colCliente"].Value?.ToString() ?? "";
             string telefone = row.Cells["colTelefone"].Value?.ToString() ?? "";
             string estado = row.Cells["colEstado"].Value?.ToString() ?? "";
@@ -387,6 +387,7 @@ namespace ProjetoPDV_Nathan
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
+                    // Atualiza a linha com os dados editados
                     row.Cells["colCliente"].Value = form.Nome;
                     row.Cells["colTelefone"].Value = form.Telefone;
                     row.Cells["colEstado"].Value = form.Estado;
@@ -395,6 +396,7 @@ namespace ProjetoPDV_Nathan
                 }
             }
         }
+
     }
 }
 

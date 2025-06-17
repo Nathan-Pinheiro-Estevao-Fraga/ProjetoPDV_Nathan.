@@ -92,23 +92,14 @@
     <Compile Include="ControlClientes.Designer.cs">
       <DependentUpon>ControlClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FiltroTesteControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FormCompraTipo.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FiltroTesteControl.Designer.cs">
-      <DependentUpon>FiltroTesteControl.cs</DependentUpon>
+    <Compile Include="FormCompraTipo.Designer.cs">
+      <DependentUpon>FormCompraTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditarCliente.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditarCliente.Designer.cs">
-      <DependentUpon>FormEditarCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTipoCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTipoCompra.Designer.cs">
-      <DependentUpon>FormTipoCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -140,14 +131,11 @@
     <EmbeddedResource Include="ControlClientes.resx">
       <DependentUpon>ControlClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FiltroTesteControl.resx">
-      <DependentUpon>FiltroTesteControl.cs</DependentUpon>
+    <EmbeddedResource Include="FormCompraTipo.resx">
+      <DependentUpon>FormCompraTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoCompra.resx">
-      <DependentUpon>FormTipoCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

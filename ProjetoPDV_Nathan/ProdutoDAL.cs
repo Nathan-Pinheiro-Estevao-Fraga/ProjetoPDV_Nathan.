@@ -40,7 +40,42 @@ namespace ProjetoPDV_Nathan
                 }
             }
         }
+        public class Produto
+        {
+            public string Referencia { get; set; }
+            public string Descricao { get; set; }
+            public decimal PrecoVarejo { get; set; }
+            public string Unidade { get; set; }
+            public string CaminhoImagem { get; set; }
+        }
 
+        public Produto BuscarPorReferencia(string referencia)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(conexao))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Produtos WHERE referencia = @referencia";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@referencia", referencia);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Produto
+                            {
+                                Referencia = reader["referencia"].ToString(),
+                                Descricao = reader["descricao"].ToString(),
+                                PrecoVarejo = Convert.ToDecimal(reader["preco_varejo"]),
+                                Unidade = "Un", // ajuste conforme sua tabela
+                                CaminhoImagem = "" // só se usar imagem
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
 
 
         public void AtualizarProduto(DataRow row)
@@ -50,24 +85,20 @@ namespace ProjetoPDV_Nathan
                 conn.Open();
 
                 string sql = @"UPDATE Produtos SET 
-                                descricao = @descricao,
-                                preco_compra = @precoCompra,
-                                preco_venda = @precoVenda,
-                                preco_atacado = @precoAtacado,
-                                preco_varejo = @precoVarejo,
-                                estoque = @estoque,
-                                fornecido = @fornecido,
-                                carteira = @carteira,
-                                compradas = @compradas,
-                                vendidas = @vendidas
-                                WHERE referencia = @referencia";
+                        descricao = @descricao,
+                        preco_atacado = @precoAtacado,
+                        preco_varejo = @precoVarejo,
+                        estoque = @estoque,
+                        fornecido = @fornecido,
+                        carteira = @carteira,
+                        compradas = @compradas,
+                        vendidas = @vendidas
+                        WHERE referencia = @referencia";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@referencia", row["referencia"]);
                     cmd.Parameters.AddWithValue("@descricao", row["descricao"]);
-                    cmd.Parameters.AddWithValue("@precoCompra", row["preco_compra"]);
-                    cmd.Parameters.AddWithValue("@precoVenda", row["preco_venda"]);
                     cmd.Parameters.AddWithValue("@precoAtacado", row["preco_atacado"]);
                     cmd.Parameters.AddWithValue("@precoVarejo", row["preco_varejo"]);
                     cmd.Parameters.AddWithValue("@estoque", row["estoque"]);
@@ -80,6 +111,8 @@ namespace ProjetoPDV_Nathan
                 }
             }
         }
+
+        
 
         public DataTable CarregarProdutos()
         {
@@ -107,5 +140,19 @@ namespace ProjetoPDV_Nathan
                 return dt;
             }
         }
+        public void ExcluirProduto(string referencia)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(conexao))
+            {
+                conn.Open();
+                string sql = "DELETE FROM Produtos WHERE referencia = @referencia";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@referencia", referencia);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
+
 }

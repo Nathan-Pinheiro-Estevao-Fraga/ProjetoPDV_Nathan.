@@ -31,16 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlEstoque));
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
             this.panelRodape = new System.Windows.Forms.Panel();
-            this.btnNovoProduto = new System.Windows.Forms.Button();
-            this.tableLayoutPrincipal = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSalvarAlterações = new System.Windows.Forms.Button();
             this.lblTotalItens = new System.Windows.Forms.Label();
-            this.lblPesquisa = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
+            this.btnNovoProduto = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.btnSalvarAlterações = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtboxPesquisa = new System.Windows.Forms.TextBox();
+            this.tableLayoutPrincipal = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.panelRodape.SuspendLayout();
             this.tableLayoutPrincipal.SuspendLayout();
@@ -66,8 +64,6 @@
             // 
             this.panelRodape.BackColor = System.Drawing.Color.Gainsboro;
             this.panelRodape.Controls.Add(this.btnSalvarAlterações);
-            this.panelRodape.Controls.Add(this.txtboxPesquisa);
-            this.panelRodape.Controls.Add(this.lblPesquisa);
             this.panelRodape.Controls.Add(this.lblTotalItens);
             this.panelRodape.Controls.Add(this.btnExcluir);
             this.panelRodape.Controls.Add(this.btnEditar);
@@ -81,55 +77,45 @@
             this.panelRodape.Size = new System.Drawing.Size(1047, 60);
             this.panelRodape.TabIndex = 7;
             // 
-            // btnNovoProduto
+            // btnSalvarAlterações
             // 
-            this.btnNovoProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoProduto.Image")));
-            this.btnNovoProduto.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNovoProduto.Location = new System.Drawing.Point(477, 6);
-            this.btnNovoProduto.Name = "btnNovoProduto";
-            this.btnNovoProduto.Size = new System.Drawing.Size(89, 48);
-            this.btnNovoProduto.TabIndex = 1;
-            this.btnNovoProduto.Text = "Novo";
-            this.btnNovoProduto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovoProduto.UseVisualStyleBackColor = true;
-            this.btnNovoProduto.Click += new System.EventHandler(this.btnNovoProduto_Click);
-            // 
-            // tableLayoutPrincipal
-            // 
-            this.tableLayoutPrincipal.ColumnCount = 1;
-            this.tableLayoutPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPrincipal.Controls.Add(this.panelRodape, 0, 1);
-            this.tableLayoutPrincipal.Controls.Add(this.dgvEstoque, 0, 0);
-            this.tableLayoutPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPrincipal.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPrincipal.Name = "tableLayoutPrincipal";
-            this.tableLayoutPrincipal.RowCount = 2;
-            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPrincipal.Size = new System.Drawing.Size(1047, 600);
-            this.tableLayoutPrincipal.TabIndex = 8;
+            this.btnSalvarAlterações.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarAlterações.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarAlterações.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarAlterações.Image")));
+            this.btnSalvarAlterações.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvarAlterações.Location = new System.Drawing.Point(667, 6);
+            this.btnSalvarAlterações.Name = "btnSalvarAlterações";
+            this.btnSalvarAlterações.Size = new System.Drawing.Size(89, 48);
+            this.btnSalvarAlterações.TabIndex = 12;
+            this.btnSalvarAlterações.Text = "Salvar";
+            this.btnSalvarAlterações.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvarAlterações.UseVisualStyleBackColor = true;
+            this.btnSalvarAlterações.Click += new System.EventHandler(this.btnSalvarAlterações_Click);
             // 
             // lblTotalItens
             // 
             this.lblTotalItens.AutoSize = true;
-            this.lblTotalItens.Location = new System.Drawing.Point(25, 19);
+            this.lblTotalItens.Location = new System.Drawing.Point(24, 23);
             this.lblTotalItens.Name = "lblTotalItens";
             this.lblTotalItens.Size = new System.Drawing.Size(83, 13);
             this.lblTotalItens.TabIndex = 6;
             this.lblTotalItens.Text = "Total de itens: 0";
+            this.lblTotalItens.Click += new System.EventHandler(this.lblTotalItens_Click);
             // 
-            // lblPesquisa
+            // btnExcluir
             // 
-            this.lblPesquisa.AutoSize = true;
-            this.lblPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPesquisa.Location = new System.Drawing.Point(242, 17);
-            this.lblPesquisa.Name = "lblPesquisa";
-            this.lblPesquisa.Size = new System.Drawing.Size(66, 13);
-            this.lblPesquisa.TabIndex = 10;
-            this.lblPesquisa.Text = "Pesquisar:";
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = global::ProjetoPDV_Nathan.Properties.Resources.icons8_fechar_janela_27;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(952, 6);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(89, 48);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
@@ -161,6 +147,21 @@
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
+            // btnNovoProduto
+            // 
+            this.btnNovoProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoProduto.Image")));
+            this.btnNovoProduto.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovoProduto.Location = new System.Drawing.Point(477, 6);
+            this.btnNovoProduto.Name = "btnNovoProduto";
+            this.btnNovoProduto.Size = new System.Drawing.Size(89, 48);
+            this.btnNovoProduto.TabIndex = 1;
+            this.btnNovoProduto.Text = "Novo";
+            this.btnNovoProduto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNovoProduto.UseVisualStyleBackColor = true;
+            this.btnNovoProduto.Click += new System.EventHandler(this.btnNovoProduto_Click);
+            // 
             // btnComprar
             // 
             this.btnComprar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -176,43 +177,21 @@
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // btnSalvarAlterações
+            // tableLayoutPrincipal
             // 
-            this.btnSalvarAlterações.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarAlterações.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarAlterações.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarAlterações.Image")));
-            this.btnSalvarAlterações.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalvarAlterações.Location = new System.Drawing.Point(667, 6);
-            this.btnSalvarAlterações.Name = "btnSalvarAlterações";
-            this.btnSalvarAlterações.Size = new System.Drawing.Size(89, 48);
-            this.btnSalvarAlterações.TabIndex = 12;
-            this.btnSalvarAlterações.Text = "Salvar";
-            this.btnSalvarAlterações.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvarAlterações.UseVisualStyleBackColor = true;
-            this.btnSalvarAlterações.Click += new System.EventHandler(this.btnSalvarAlterações_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = global::ProjetoPDV_Nathan.Properties.Resources.icons8_fechar_janela_27;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExcluir.Location = new System.Drawing.Point(952, 6);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(89, 48);
-            this.btnExcluir.TabIndex = 3;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // txtboxPesquisa
-            // 
-            this.txtboxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtboxPesquisa.Location = new System.Drawing.Point(320, 14);
-            this.txtboxPesquisa.Name = "txtboxPesquisa";
-            this.txtboxPesquisa.Size = new System.Drawing.Size(143, 20);
-            this.txtboxPesquisa.TabIndex = 11;
+            this.tableLayoutPrincipal.ColumnCount = 1;
+            this.tableLayoutPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPrincipal.Controls.Add(this.panelRodape, 0, 1);
+            this.tableLayoutPrincipal.Controls.Add(this.dgvEstoque, 0, 0);
+            this.tableLayoutPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPrincipal.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPrincipal.Name = "tableLayoutPrincipal";
+            this.tableLayoutPrincipal.RowCount = 2;
+            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPrincipal.Size = new System.Drawing.Size(1047, 600);
+            this.tableLayoutPrincipal.TabIndex = 8;
             // 
             // ControlEstoque
             // 
@@ -236,8 +215,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPrincipal;
         private System.Windows.Forms.Button btnNovoProduto;
         private System.Windows.Forms.Button btnSalvarAlterações;
-        private System.Windows.Forms.TextBox txtboxPesquisa;
-        private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.Label lblTotalItens;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
