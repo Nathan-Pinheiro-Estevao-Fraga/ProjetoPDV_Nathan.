@@ -155,7 +155,7 @@ namespace ProjetoPDV_Nathan
 
         private void panelCentralConteudo_Paint(object sender, PaintEventArgs e)
         {
-
+              
         }       
         private ControlClientes controleClientes;
 

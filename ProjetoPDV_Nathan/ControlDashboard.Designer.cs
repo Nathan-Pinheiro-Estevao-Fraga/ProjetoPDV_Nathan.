@@ -30,82 +30,82 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlDashboard));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
             this.panelGráficos = new System.Windows.Forms.Panel();
+            this.pictureBoxGráfico = new System.Windows.Forms.PictureBox();
             this.labelGráfico = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panelNovoCliente = new System.Windows.Forms.Panel();
+            this.pictureBoxNovoCliente = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panelProdutos = new System.Windows.Forms.Panel();
+            this.pictureBoxProduto = new System.Windows.Forms.PictureBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.panelTotalEstoque = new System.Windows.Forms.Panel();
+            this.pictureBoxTotalEstoque = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.labelTotalEstoque = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panelNovaCompra = new System.Windows.Forms.Panel();
+            this.pictureBoxNovaCompra = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panelTotalClientes = new System.Windows.Forms.Panel();
+            this.pictureBoxTotalClientes = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TotalClientes = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel1LimiteMensal = new System.Windows.Forms.Panel();
+            this.pictureBoxLimiteMensal = new System.Windows.Forms.PictureBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.labelLimiteMensal = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panelTotalVendas = new System.Windows.Forms.Panel();
+            this.pictureBoxTotalVendas = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotalVendas = new System.Windows.Forms.Label();
-            this.panelNovoCliente = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.panelTotalClientes = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TotalClientes = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.panelProdutos = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
             this.lblDataHora = new System.Windows.Forms.Label();
-            this.panel1LimiteMensal = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.labelLimiteMensal = new System.Windows.Forms.Label();
-            this.panelNovaCompra = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
             this.panelCentralConteudo = new System.Windows.Forms.Panel();
-            this.pictureBoxGráfico = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTotalEstoque = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTotalVendas = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNovoCliente = new System.Windows.Forms.PictureBox();
-            this.pictureBoxTotalClientes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxProduto = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLimiteMensal = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNovaCompra = new System.Windows.Forms.PictureBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
             this.panelCentral.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panelGráficos.SuspendLayout();
-            this.panelTotalEstoque.SuspendLayout();
-            this.panelTotalVendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráfico)).BeginInit();
+            this.panel18.SuspendLayout();
             this.panelNovoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoCliente)).BeginInit();
+            this.panel17.SuspendLayout();
+            this.panelProdutos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).BeginInit();
+            this.panel16.SuspendLayout();
+            this.panelTotalEstoque.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalEstoque)).BeginInit();
+            this.panel15.SuspendLayout();
+            this.panelNovaCompra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovaCompra)).BeginInit();
+            this.panel14.SuspendLayout();
+            this.panelTotalClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalClientes)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel1LimiteMensal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLimiteMensal)).BeginInit();
+            this.panel12.SuspendLayout();
+            this.panelTotalVendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalVendas)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panelTotalClientes.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panelProdutos.SuspendLayout();
-            this.panel1LimiteMensal.SuspendLayout();
-            this.panelNovaCompra.SuspendLayout();
             this.panelCentralConteudo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráfico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalVendas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLimiteMensal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovaCompra)).BeginInit();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCentral
@@ -129,6 +129,15 @@
             this.panelCentral.TabIndex = 39;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
             // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Black;
+            this.panel19.Controls.Add(this.panelGráficos);
+            this.panel19.Location = new System.Drawing.Point(714, 156);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(198, 74);
+            this.panel19.TabIndex = 65;
+            // 
             // panelGráficos
             // 
             this.panelGráficos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(101)))), ((int)(((byte)(115)))));
@@ -139,6 +148,15 @@
             this.panelGráficos.Name = "panelGráficos";
             this.panelGráficos.Size = new System.Drawing.Size(194, 69);
             this.panelGráficos.TabIndex = 60;
+            // 
+            // pictureBoxGráfico
+            // 
+            this.pictureBoxGráfico.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGráfico.Image")));
+            this.pictureBoxGráfico.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxGráfico.Name = "pictureBoxGráfico";
+            this.pictureBoxGráfico.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxGráfico.TabIndex = 51;
+            this.pictureBoxGráfico.TabStop = false;
             // 
             // labelGráfico
             // 
@@ -152,6 +170,97 @@
             this.labelGráfico.TabIndex = 48;
             this.labelGráfico.Text = "Gráficos+";
             // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Black;
+            this.panel18.Controls.Add(this.panelNovoCliente);
+            this.panel18.Location = new System.Drawing.Point(510, 156);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(198, 74);
+            this.panel18.TabIndex = 65;
+            // 
+            // panelNovoCliente
+            // 
+            this.panelNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(137)))), ((int)(((byte)(16)))));
+            this.panelNovoCliente.Controls.Add(this.pictureBoxNovoCliente);
+            this.panelNovoCliente.Controls.Add(this.label20);
+            this.panelNovoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelNovoCliente.Location = new System.Drawing.Point(2, 2);
+            this.panelNovoCliente.Name = "panelNovoCliente";
+            this.panelNovoCliente.Size = new System.Drawing.Size(194, 69);
+            this.panelNovoCliente.TabIndex = 60;
+            // 
+            // pictureBoxNovoCliente
+            // 
+            this.pictureBoxNovoCliente.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovoCliente.Image")));
+            this.pictureBoxNovoCliente.Location = new System.Drawing.Point(132, 9);
+            this.pictureBoxNovoCliente.Name = "pictureBoxNovoCliente";
+            this.pictureBoxNovoCliente.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxNovoCliente.TabIndex = 51;
+            this.pictureBoxNovoCliente.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(13, 21);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(122, 25);
+            this.label20.TabIndex = 48;
+            this.label20.Text = "Novo Cliente";
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Black;
+            this.panel17.Controls.Add(this.panelProdutos);
+            this.panel17.Location = new System.Drawing.Point(302, 156);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(198, 74);
+            this.panel17.TabIndex = 64;
+            // 
+            // panelProdutos
+            // 
+            this.panelProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(143)))), ((int)(((byte)(119)))));
+            this.panelProdutos.Controls.Add(this.pictureBoxProduto);
+            this.panelProdutos.Controls.Add(this.label22);
+            this.panelProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelProdutos.Location = new System.Drawing.Point(2, 2);
+            this.panelProdutos.Name = "panelProdutos";
+            this.panelProdutos.Size = new System.Drawing.Size(194, 69);
+            this.panelProdutos.TabIndex = 60;
+            // 
+            // pictureBoxProduto
+            // 
+            this.pictureBoxProduto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProduto.Image")));
+            this.pictureBoxProduto.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxProduto.Name = "pictureBoxProduto";
+            this.pictureBoxProduto.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxProduto.TabIndex = 51;
+            this.pictureBoxProduto.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(20, 21);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(102, 25);
+            this.label22.TabIndex = 48;
+            this.label22.Text = "Produtos+";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Black;
+            this.panel16.Controls.Add(this.panelTotalEstoque);
+            this.panel16.Location = new System.Drawing.Point(714, 76);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(198, 74);
+            this.panel16.TabIndex = 63;
+            // 
             // panelTotalEstoque
             // 
             this.panelTotalEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
@@ -163,6 +272,15 @@
             this.panelTotalEstoque.Name = "panelTotalEstoque";
             this.panelTotalEstoque.Size = new System.Drawing.Size(194, 69);
             this.panelTotalEstoque.TabIndex = 60;
+            // 
+            // pictureBoxTotalEstoque
+            // 
+            this.pictureBoxTotalEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalEstoque.Image")));
+            this.pictureBoxTotalEstoque.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxTotalEstoque.Name = "pictureBoxTotalEstoque";
+            this.pictureBoxTotalEstoque.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxTotalEstoque.TabIndex = 51;
+            this.pictureBoxTotalEstoque.TabStop = false;
             // 
             // label24
             // 
@@ -186,6 +304,161 @@
             this.labelTotalEstoque.TabIndex = 50;
             this.labelTotalEstoque.Text = "500";
             // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Black;
+            this.panel15.Controls.Add(this.panelNovaCompra);
+            this.panel15.Location = new System.Drawing.Point(98, 156);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(198, 74);
+            this.panel15.TabIndex = 63;
+            // 
+            // panelNovaCompra
+            // 
+            this.panelNovaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
+            this.panelNovaCompra.Controls.Add(this.pictureBoxNovaCompra);
+            this.panelNovaCompra.Controls.Add(this.label16);
+            this.panelNovaCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelNovaCompra.Location = new System.Drawing.Point(2, 2);
+            this.panelNovaCompra.Name = "panelNovaCompra";
+            this.panelNovaCompra.Size = new System.Drawing.Size(194, 69);
+            this.panelNovaCompra.TabIndex = 60;
+            // 
+            // pictureBoxNovaCompra
+            // 
+            this.pictureBoxNovaCompra.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovaCompra.Image")));
+            this.pictureBoxNovaCompra.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxNovaCompra.Name = "pictureBoxNovaCompra";
+            this.pictureBoxNovaCompra.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxNovaCompra.TabIndex = 51;
+            this.pictureBoxNovaCompra.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(8, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(128, 25);
+            this.label16.TabIndex = 48;
+            this.label16.Text = "Nova Compra";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.Controls.Add(this.panelTotalClientes);
+            this.panel14.Location = new System.Drawing.Point(510, 76);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(198, 74);
+            this.panel14.TabIndex = 63;
+            // 
+            // panelTotalClientes
+            // 
+            this.panelTotalClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(117)))), ((int)(((byte)(20)))));
+            this.panelTotalClientes.Controls.Add(this.pictureBoxTotalClientes);
+            this.panelTotalClientes.Controls.Add(this.label12);
+            this.panelTotalClientes.Controls.Add(this.TotalClientes);
+            this.panelTotalClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelTotalClientes.Location = new System.Drawing.Point(2, 2);
+            this.panelTotalClientes.Name = "panelTotalClientes";
+            this.panelTotalClientes.Size = new System.Drawing.Size(194, 69);
+            this.panelTotalClientes.TabIndex = 60;
+            // 
+            // pictureBoxTotalClientes
+            // 
+            this.pictureBoxTotalClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalClientes.Image")));
+            this.pictureBoxTotalClientes.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxTotalClientes.Name = "pictureBoxTotalClientes";
+            this.pictureBoxTotalClientes.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxTotalClientes.TabIndex = 51;
+            this.pictureBoxTotalClientes.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(15, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 20);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Total Clientes";
+            // 
+            // TotalClientes
+            // 
+            this.TotalClientes.AutoSize = true;
+            this.TotalClientes.BackColor = System.Drawing.Color.Transparent;
+            this.TotalClientes.ForeColor = System.Drawing.Color.White;
+            this.TotalClientes.Location = new System.Drawing.Point(46, 38);
+            this.TotalClientes.Name = "TotalClientes";
+            this.TotalClientes.Size = new System.Drawing.Size(36, 20);
+            this.TotalClientes.TabIndex = 50;
+            this.TotalClientes.Text = "120";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Black;
+            this.panel13.Controls.Add(this.panel1LimiteMensal);
+            this.panel13.Location = new System.Drawing.Point(302, 76);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(198, 74);
+            this.panel13.TabIndex = 62;
+            // 
+            // panel1LimiteMensal
+            // 
+            this.panel1LimiteMensal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1LimiteMensal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(58)))), ((int)(((byte)(46)))));
+            this.panel1LimiteMensal.Controls.Add(this.pictureBoxLimiteMensal);
+            this.panel1LimiteMensal.Controls.Add(this.label26);
+            this.panel1LimiteMensal.Controls.Add(this.labelLimiteMensal);
+            this.panel1LimiteMensal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1LimiteMensal.Location = new System.Drawing.Point(2, 2);
+            this.panel1LimiteMensal.Name = "panel1LimiteMensal";
+            this.panel1LimiteMensal.Size = new System.Drawing.Size(194, 69);
+            this.panel1LimiteMensal.TabIndex = 60;
+            // 
+            // pictureBoxLimiteMensal
+            // 
+            this.pictureBoxLimiteMensal.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLimiteMensal.Image")));
+            this.pictureBoxLimiteMensal.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxLimiteMensal.Name = "pictureBoxLimiteMensal";
+            this.pictureBoxLimiteMensal.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxLimiteMensal.TabIndex = 51;
+            this.pictureBoxLimiteMensal.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(13, 15);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(107, 20);
+            this.label26.TabIndex = 48;
+            this.label26.Text = "Limite Mensal";
+            // 
+            // labelLimiteMensal
+            // 
+            this.labelLimiteMensal.AutoSize = true;
+            this.labelLimiteMensal.BackColor = System.Drawing.Color.Transparent;
+            this.labelLimiteMensal.ForeColor = System.Drawing.Color.White;
+            this.labelLimiteMensal.Location = new System.Drawing.Point(17, 38);
+            this.labelLimiteMensal.Name = "labelLimiteMensal";
+            this.labelLimiteMensal.Size = new System.Drawing.Size(99, 20);
+            this.labelLimiteMensal.TabIndex = 50;
+            this.labelLimiteMensal.Text = "R$12.000,00";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Black;
+            this.panel12.Controls.Add(this.panelTotalVendas);
+            this.panel12.Location = new System.Drawing.Point(98, 76);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(198, 74);
+            this.panel12.TabIndex = 61;
+            // 
             // panelTotalVendas
             // 
             this.panelTotalVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -199,6 +472,15 @@
             this.panelTotalVendas.Size = new System.Drawing.Size(194, 69);
             this.panelTotalVendas.TabIndex = 59;
             this.panelTotalVendas.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBoxTotalVendas
+            // 
+            this.pictureBoxTotalVendas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalVendas.Image")));
+            this.pictureBoxTotalVendas.Location = new System.Drawing.Point(128, 9);
+            this.pictureBoxTotalVendas.Name = "pictureBoxTotalVendas";
+            this.pictureBoxTotalVendas.Size = new System.Drawing.Size(56, 49);
+            this.pictureBoxTotalVendas.TabIndex = 51;
+            this.pictureBoxTotalVendas.TabStop = false;
             // 
             // label2
             // 
@@ -223,29 +505,6 @@
             this.labelTotalVendas.TabIndex = 50;
             this.labelTotalVendas.Text = "R$12.000,00";
             this.labelTotalVendas.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // panelNovoCliente
-            // 
-            this.panelNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(137)))), ((int)(((byte)(16)))));
-            this.panelNovoCliente.Controls.Add(this.pictureBoxNovoCliente);
-            this.panelNovoCliente.Controls.Add(this.label20);
-            this.panelNovoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelNovoCliente.Location = new System.Drawing.Point(2, 2);
-            this.panelNovoCliente.Name = "panelNovoCliente";
-            this.panelNovoCliente.Size = new System.Drawing.Size(194, 69);
-            this.panelNovoCliente.TabIndex = 60;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(13, 21);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(122, 25);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Novo Cliente";
             // 
             // panel8
             // 
@@ -289,40 +548,6 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "Quantidade de produtos em estoque:";
             // 
-            // panelTotalClientes
-            // 
-            this.panelTotalClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(117)))), ((int)(((byte)(20)))));
-            this.panelTotalClientes.Controls.Add(this.pictureBoxTotalClientes);
-            this.panelTotalClientes.Controls.Add(this.label12);
-            this.panelTotalClientes.Controls.Add(this.TotalClientes);
-            this.panelTotalClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelTotalClientes.Location = new System.Drawing.Point(2, 2);
-            this.panelTotalClientes.Name = "panelTotalClientes";
-            this.panelTotalClientes.Size = new System.Drawing.Size(194, 69);
-            this.panelTotalClientes.TabIndex = 60;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(15, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 20);
-            this.label12.TabIndex = 48;
-            this.label12.Text = "Total Clientes";
-            // 
-            // TotalClientes
-            // 
-            this.TotalClientes.AutoSize = true;
-            this.TotalClientes.BackColor = System.Drawing.Color.Transparent;
-            this.TotalClientes.ForeColor = System.Drawing.Color.White;
-            this.TotalClientes.Location = new System.Drawing.Point(46, 38);
-            this.TotalClientes.Name = "TotalClientes";
-            this.TotalClientes.Size = new System.Drawing.Size(36, 20);
-            this.TotalClientes.TabIndex = 50;
-            this.TotalClientes.Text = "120";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -359,29 +584,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Compras Recentes:";
             // 
-            // panelProdutos
-            // 
-            this.panelProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(143)))), ((int)(((byte)(119)))));
-            this.panelProdutos.Controls.Add(this.pictureBoxProduto);
-            this.panelProdutos.Controls.Add(this.label22);
-            this.panelProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelProdutos.Location = new System.Drawing.Point(2, 2);
-            this.panelProdutos.Name = "panelProdutos";
-            this.panelProdutos.Size = new System.Drawing.Size(194, 69);
-            this.panelProdutos.TabIndex = 60;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(20, 21);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(102, 25);
-            this.label22.TabIndex = 48;
-            this.label22.Text = "Produtos+";
-            // 
             // lblDataHora
             // 
             this.lblDataHora.AutoSize = true;
@@ -394,64 +596,6 @@
             this.lblDataHora.Text = "Data/Hora:";
             this.lblDataHora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblDataHora.Click += new System.EventHandler(this.lblDataHora_Click);
-            // 
-            // panel1LimiteMensal
-            // 
-            this.panel1LimiteMensal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1LimiteMensal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(58)))), ((int)(((byte)(46)))));
-            this.panel1LimiteMensal.Controls.Add(this.pictureBoxLimiteMensal);
-            this.panel1LimiteMensal.Controls.Add(this.label26);
-            this.panel1LimiteMensal.Controls.Add(this.labelLimiteMensal);
-            this.panel1LimiteMensal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1LimiteMensal.Location = new System.Drawing.Point(2, 2);
-            this.panel1LimiteMensal.Name = "panel1LimiteMensal";
-            this.panel1LimiteMensal.Size = new System.Drawing.Size(194, 69);
-            this.panel1LimiteMensal.TabIndex = 60;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(13, 15);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(107, 20);
-            this.label26.TabIndex = 48;
-            this.label26.Text = "Limite Mensal";
-            // 
-            // labelLimiteMensal
-            // 
-            this.labelLimiteMensal.AutoSize = true;
-            this.labelLimiteMensal.BackColor = System.Drawing.Color.Transparent;
-            this.labelLimiteMensal.ForeColor = System.Drawing.Color.White;
-            this.labelLimiteMensal.Location = new System.Drawing.Point(17, 38);
-            this.labelLimiteMensal.Name = "labelLimiteMensal";
-            this.labelLimiteMensal.Size = new System.Drawing.Size(99, 20);
-            this.labelLimiteMensal.TabIndex = 50;
-            this.labelLimiteMensal.Text = "R$12.000,00";
-            // 
-            // panelNovaCompra
-            // 
-            this.panelNovaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
-            this.panelNovaCompra.Controls.Add(this.pictureBoxNovaCompra);
-            this.panelNovaCompra.Controls.Add(this.label16);
-            this.panelNovaCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelNovaCompra.Location = new System.Drawing.Point(2, 2);
-            this.panelNovaCompra.Name = "panelNovaCompra";
-            this.panelNovaCompra.Size = new System.Drawing.Size(194, 69);
-            this.panelNovaCompra.TabIndex = 60;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(8, 21);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(128, 25);
-            this.label16.TabIndex = 48;
-            this.label16.Text = "Nova Compra";
             // 
             // panelCentralConteudo
             // 
@@ -466,150 +610,6 @@
             this.panelCentralConteudo.TabIndex = 25;
             this.panelCentralConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentralConteudo_Paint);
             // 
-            // pictureBoxGráfico
-            // 
-            this.pictureBoxGráfico.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGráfico.Image")));
-            this.pictureBoxGráfico.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxGráfico.Name = "pictureBoxGráfico";
-            this.pictureBoxGráfico.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxGráfico.TabIndex = 51;
-            this.pictureBoxGráfico.TabStop = false;
-            // 
-            // pictureBoxTotalEstoque
-            // 
-            this.pictureBoxTotalEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalEstoque.Image")));
-            this.pictureBoxTotalEstoque.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxTotalEstoque.Name = "pictureBoxTotalEstoque";
-            this.pictureBoxTotalEstoque.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxTotalEstoque.TabIndex = 51;
-            this.pictureBoxTotalEstoque.TabStop = false;
-            // 
-            // pictureBoxTotalVendas
-            // 
-            this.pictureBoxTotalVendas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalVendas.Image")));
-            this.pictureBoxTotalVendas.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxTotalVendas.Name = "pictureBoxTotalVendas";
-            this.pictureBoxTotalVendas.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxTotalVendas.TabIndex = 51;
-            this.pictureBoxTotalVendas.TabStop = false;
-            // 
-            // pictureBoxNovoCliente
-            // 
-            this.pictureBoxNovoCliente.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovoCliente.Image")));
-            this.pictureBoxNovoCliente.Location = new System.Drawing.Point(132, 9);
-            this.pictureBoxNovoCliente.Name = "pictureBoxNovoCliente";
-            this.pictureBoxNovoCliente.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxNovoCliente.TabIndex = 51;
-            this.pictureBoxNovoCliente.TabStop = false;
-            // 
-            // pictureBoxTotalClientes
-            // 
-            this.pictureBoxTotalClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTotalClientes.Image")));
-            this.pictureBoxTotalClientes.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxTotalClientes.Name = "pictureBoxTotalClientes";
-            this.pictureBoxTotalClientes.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxTotalClientes.TabIndex = 51;
-            this.pictureBoxTotalClientes.TabStop = false;
-            // 
-            // pictureBoxProduto
-            // 
-            this.pictureBoxProduto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProduto.Image")));
-            this.pictureBoxProduto.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxProduto.Name = "pictureBoxProduto";
-            this.pictureBoxProduto.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxProduto.TabIndex = 51;
-            this.pictureBoxProduto.TabStop = false;
-            // 
-            // pictureBoxLimiteMensal
-            // 
-            this.pictureBoxLimiteMensal.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLimiteMensal.Image")));
-            this.pictureBoxLimiteMensal.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxLimiteMensal.Name = "pictureBoxLimiteMensal";
-            this.pictureBoxLimiteMensal.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxLimiteMensal.TabIndex = 51;
-            this.pictureBoxLimiteMensal.TabStop = false;
-            // 
-            // pictureBoxNovaCompra
-            // 
-            this.pictureBoxNovaCompra.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNovaCompra.Image")));
-            this.pictureBoxNovaCompra.Location = new System.Drawing.Point(128, 9);
-            this.pictureBoxNovaCompra.Name = "pictureBoxNovaCompra";
-            this.pictureBoxNovaCompra.Size = new System.Drawing.Size(56, 49);
-            this.pictureBoxNovaCompra.TabIndex = 51;
-            this.pictureBoxNovaCompra.TabStop = false;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Black;
-            this.panel12.Controls.Add(this.panelTotalVendas);
-            this.panel12.Location = new System.Drawing.Point(98, 76);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(198, 74);
-            this.panel12.TabIndex = 61;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Black;
-            this.panel13.Controls.Add(this.panel1LimiteMensal);
-            this.panel13.Location = new System.Drawing.Point(302, 76);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(198, 74);
-            this.panel13.TabIndex = 62;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Black;
-            this.panel14.Controls.Add(this.panelTotalClientes);
-            this.panel14.Location = new System.Drawing.Point(510, 76);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(198, 74);
-            this.panel14.TabIndex = 63;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Black;
-            this.panel15.Controls.Add(this.panelNovaCompra);
-            this.panel15.Location = new System.Drawing.Point(98, 156);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(198, 74);
-            this.panel15.TabIndex = 63;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Black;
-            this.panel16.Controls.Add(this.panelTotalEstoque);
-            this.panel16.Location = new System.Drawing.Point(714, 76);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(198, 74);
-            this.panel16.TabIndex = 63;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Black;
-            this.panel17.Controls.Add(this.panelProdutos);
-            this.panel17.Location = new System.Drawing.Point(302, 156);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(198, 74);
-            this.panel17.TabIndex = 64;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Black;
-            this.panel18.Controls.Add(this.panelNovoCliente);
-            this.panel18.Location = new System.Drawing.Point(510, 156);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(198, 74);
-            this.panel18.TabIndex = 65;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.Black;
-            this.panel19.Controls.Add(this.panelGráficos);
-            this.panel19.Location = new System.Drawing.Point(714, 156);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(198, 74);
-            this.panel19.TabIndex = 65;
-            // 
             // ControlDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,46 +619,46 @@
             this.Size = new System.Drawing.Size(1280, 700);
             this.panelCentral.ResumeLayout(false);
             this.panelCentral.PerformLayout();
+            this.panel19.ResumeLayout(false);
             this.panelGráficos.ResumeLayout(false);
             this.panelGráficos.PerformLayout();
-            this.panelTotalEstoque.ResumeLayout(false);
-            this.panelTotalEstoque.PerformLayout();
-            this.panelTotalVendas.ResumeLayout(false);
-            this.panelTotalVendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráfico)).EndInit();
+            this.panel18.ResumeLayout(false);
             this.panelNovoCliente.ResumeLayout(false);
             this.panelNovoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoCliente)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.panelProdutos.ResumeLayout(false);
+            this.panelProdutos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panelTotalEstoque.ResumeLayout(false);
+            this.panelTotalEstoque.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalEstoque)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panelNovaCompra.ResumeLayout(false);
+            this.panelNovaCompra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovaCompra)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.panelTotalClientes.ResumeLayout(false);
+            this.panelTotalClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalClientes)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel1LimiteMensal.ResumeLayout(false);
+            this.panel1LimiteMensal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLimiteMensal)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panelTotalVendas.ResumeLayout(false);
+            this.panelTotalVendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalVendas)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panelTotalClientes.ResumeLayout(false);
-            this.panelTotalClientes.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panelProdutos.ResumeLayout(false);
-            this.panelProdutos.PerformLayout();
-            this.panel1LimiteMensal.ResumeLayout(false);
-            this.panel1LimiteMensal.PerformLayout();
-            this.panelNovaCompra.ResumeLayout(false);
-            this.panelNovaCompra.PerformLayout();
             this.panelCentralConteudo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGráfico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalVendas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTotalClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLimiteMensal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovaCompra)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

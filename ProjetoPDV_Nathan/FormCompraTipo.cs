@@ -17,7 +17,7 @@ namespace ProjetoPDV_Nathan
         {
             InicializarFormulario();
         }
-
+         
         private void FormCompraTipo_Load(object sender, EventArgs e) { 
         }
 

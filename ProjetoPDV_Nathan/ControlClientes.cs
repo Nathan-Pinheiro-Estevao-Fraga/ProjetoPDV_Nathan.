@@ -215,7 +215,7 @@ namespace ProjetoPDV_Nathan
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+              
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

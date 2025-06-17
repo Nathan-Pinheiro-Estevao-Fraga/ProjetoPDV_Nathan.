@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlClientes));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelComando = new System.Windows.Forms.Panel();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.txtboxPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.lblTotalClientes = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelComando.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -78,49 +78,6 @@
             this.panelComando.Size = new System.Drawing.Size(1047, 60);
             this.panelComando.TabIndex = 0;
             // 
-            // txtboxPesquisa
-            // 
-            this.txtboxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtboxPesquisa.Location = new System.Drawing.Point(482, 12);
-            this.txtboxPesquisa.Name = "txtboxPesquisa";
-            this.txtboxPesquisa.Size = new System.Drawing.Size(143, 20);
-            this.txtboxPesquisa.TabIndex = 9;
-            this.txtboxPesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // lblPesquisa
-            // 
-            this.lblPesquisa.AutoSize = true;
-            this.lblPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPesquisa.Location = new System.Drawing.Point(404, 15);
-            this.lblPesquisa.Name = "lblPesquisa";
-            this.lblPesquisa.Size = new System.Drawing.Size(66, 13);
-            this.lblPesquisa.TabIndex = 8;
-            this.lblPesquisa.Text = "Pesquisar:";
-            // 
-            // lblTotalClientes
-            // 
-            this.lblTotalClientes.AutoSize = true;
-            this.lblTotalClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotalClientes.Location = new System.Drawing.Point(19, 19);
-            this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(110, 13);
-            this.lblTotalClientes.TabIndex = 7;
-            this.lblTotalClientes.Text = "Total de clitens: 0";
-            this.lblTotalClientes.Click += new System.EventHandler(this.lblTotalItens_Click);
-            // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(1047, 540);
-            this.dgvClientes.TabIndex = 1;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // btnEditar
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -151,6 +108,36 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // txtboxPesquisa
+            // 
+            this.txtboxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtboxPesquisa.Location = new System.Drawing.Point(482, 12);
+            this.txtboxPesquisa.Name = "txtboxPesquisa";
+            this.txtboxPesquisa.Size = new System.Drawing.Size(143, 20);
+            this.txtboxPesquisa.TabIndex = 9;
+            this.txtboxPesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblPesquisa
+            // 
+            this.lblPesquisa.AutoSize = true;
+            this.lblPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblPesquisa.Location = new System.Drawing.Point(404, 15);
+            this.lblPesquisa.Name = "lblPesquisa";
+            this.lblPesquisa.Size = new System.Drawing.Size(66, 13);
+            this.lblPesquisa.TabIndex = 8;
+            this.lblPesquisa.Text = "Pesquisar:";
+            // 
+            // lblTotalClientes
+            // 
+            this.lblTotalClientes.AutoSize = true;
+            this.lblTotalClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTotalClientes.Location = new System.Drawing.Point(19, 19);
+            this.lblTotalClientes.Name = "lblTotalClientes";
+            this.lblTotalClientes.Size = new System.Drawing.Size(110, 13);
+            this.lblTotalClientes.TabIndex = 7;
+            this.lblTotalClientes.Text = "Total de clitens: 0";
+            this.lblTotalClientes.Click += new System.EventHandler(this.lblTotalItens_Click);
+            // 
             // btnExcluir
             // 
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -180,6 +167,19 @@
             this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(1047, 540);
+            this.dgvClientes.TabIndex = 1;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ControlClientes
             // 

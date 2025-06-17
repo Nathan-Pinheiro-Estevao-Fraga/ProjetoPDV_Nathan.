@@ -1083,7 +1083,7 @@
             this.panelNovoPedido.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelNovoPedido.Controls.Add(this.pictureBoxNovoPedido);
             this.panelNovoPedido.Controls.Add(this.labelNovoPedido);
-            this.panelNovoPedido.Location = new System.Drawing.Point(184, 9);
+            this.panelNovoPedido.Location = new System.Drawing.Point(181, 9);
             this.panelNovoPedido.Name = "panelNovoPedido";
             this.panelNovoPedido.Size = new System.Drawing.Size(94, 48);
             this.panelNovoPedido.TabIndex = 1;

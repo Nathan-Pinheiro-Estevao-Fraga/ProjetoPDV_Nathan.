@@ -73,7 +73,7 @@ namespace ProjetoPDV_Nathan
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Nome = txtNome.Text.Trim();
-            Telefone = txtTelefone.Text.Trim();
+            Telefone = txtTelefone.Text.Trim();  
             Estado = txtEstado.Text.Trim();
             Cidade = txtCidade.Text.Trim();
             Email = txtEmail.Text.Trim();
@@ -86,6 +86,24 @@ namespace ProjetoPDV_Nathan
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormEditarCliente
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormEditarCliente";
+            this.Load += new System.EventHandler(this.FormEditarCliente_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void FormEditarCliente_Load(object sender, EventArgs e)
+        {
+              
         }
     }
 }

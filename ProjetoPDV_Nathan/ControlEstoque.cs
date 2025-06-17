@@ -25,7 +25,7 @@ namespace ProjetoPDV_Nathan
         {
             CarregarDados();
         }
-        private DateTimePicker dtp = new DateTimePicker();
+        private DateTimePicker dtp = new DateTimePicker();  
 
         private void dtp_OnTextChange(object sender, EventArgs e)
         {
@@ -391,7 +391,7 @@ namespace ProjetoPDV_Nathan
 
         private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+             
         }
 
         private void btnSalvarAlterações_Click(object sender, EventArgs e)

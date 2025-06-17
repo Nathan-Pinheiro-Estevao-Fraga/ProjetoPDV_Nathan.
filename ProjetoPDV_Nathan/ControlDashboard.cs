@@ -86,7 +86,7 @@ namespace ProjetoPDV_Nathan
 
         private void panel12_Paint(object sender, PaintEventArgs e)
         {
-            
+               
         }
 
         private void panel1TotalVendas_Paint(object sender, PaintEventArgs e)

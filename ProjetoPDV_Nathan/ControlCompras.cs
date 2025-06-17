@@ -72,7 +72,7 @@ namespace ProjetoPDV_Nathan
 
         private void textBoxDescricaoProduto_TextChanged(object sender, EventArgs e)
         {
-
+             
         }       
 
         private void textBoxReferência_TextChanged(object sender, EventArgs e)
