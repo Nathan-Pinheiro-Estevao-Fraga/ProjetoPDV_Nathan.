@@ -75,5 +75,28 @@ namespace ProjetoPDV_Nathan
                 }
             }
         }
+
+        public void ReorganizarIDs()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(conexao))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(conn))
+                {
+                    cmd.CommandText = @"
+                        CREATE TEMP TABLE temp_clientes AS
+                        SELECT nome, telefone, estado, cidade, email FROM Clientes ORDER BY id;
+
+                        DELETE FROM Clientes;
+
+                        INSERT INTO Clientes (nome, telefone, estado, cidade, email)
+                        SELECT nome, telefone, estado, cidade, email FROM temp_clientes;
+
+                        DROP TABLE temp_clientes;";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

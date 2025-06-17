@@ -92,6 +92,12 @@
     <Compile Include="ControlClientes.Designer.cs">
       <DependentUpon>ControlClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltroTesteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FiltroTesteControl.Designer.cs">
+      <DependentUpon>FiltroTesteControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlClientes.resx">
       <DependentUpon>ControlClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroTesteControl.resx">
+      <DependentUpon>FiltroTesteControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.cs</DependentUpon>

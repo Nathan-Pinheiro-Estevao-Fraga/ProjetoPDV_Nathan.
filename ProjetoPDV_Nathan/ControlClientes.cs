@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,16 +19,19 @@ namespace ProjetoPDV_Nathan
         {
             InitializeComponent();
             AtualizarTotalItens();
-            this.Load += Controle3_Load;
+            this.Load += Controle3_Load;            
             btnSalvar.Click += btnSalvar_Click;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            dgvClientes.EditingControlShowing += dgvClientes_EditingControlShowing;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);            
+
         }
+        private bool filtroAtivo = false;
         private void AtualizarTotalItens()
         {
             lblTotalClientes.Text = $"Total de itens: {dgvClientes.Rows.Count}";
         }
         //Declarando a combobox
-        
+        private TextBox textBox1;
         private ComboBox cmbCamposFiltro;
 
         private void Controle3_Load(object sender, EventArgs e)
@@ -41,6 +45,8 @@ namespace ProjetoPDV_Nathan
             dgvClientes.AllowUserToResizeRows = false;
             dgvClientes.RowHeadersVisible = false;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.VirtualMode = false;
+
 
             // Criação das colunas
             dgvClientes.Columns.Add("colID", "ID");
@@ -60,44 +66,124 @@ namespace ProjetoPDV_Nathan
             AtualizarTotalItens();
 
             cmbCamposFiltro = new ComboBox();
-            cmbCamposFiltro.DropDownStyle = ComboBoxStyle.DropDownList; // impede digitação
+            cmbCamposFiltro.DropDownStyle = ComboBoxStyle.DropDownList; 
             cmbCamposFiltro.Font = new Font("Segoe UI", 10);
             cmbCamposFiltro.Width = 200;
-            cmbCamposFiltro.Location = new Point(10, 10); // ajuste conforme seu layout
+            cmbCamposFiltro.Location = new Point(10, 10); 
 
             cmbCamposFiltro.Items.Add("Selecione o campo a filtrar");
             cmbCamposFiltro.Items.AddRange(new string[] {
             "ID", "Cliente", "Telefone", "Estado", "Cidade", "E-mail"
             });
             cmbCamposFiltro.SelectedIndex = 0; // Começa com a instrução
+            textBox1 = new TextBox();
+            textBox1.Location = new Point(220, 10); // ajuste se necessário
+            textBox1.Width = 200;
+            textBox1.TextChanged += textBox1_TextChanged;
+
+            this.Controls.Add(textBox1);
 
             this.Controls.Add(cmbCamposFiltro);
 
-
+            
             CarregarDadosClientes();
         }
         private void CarregarDadosClientes()
         {
+            if (filtroAtivo) return;
+
             ClienteDAL dal = new ClienteDAL();
             DataTable tabela = dal.ListarClientes();
 
             dgvClientes.Rows.Clear();
-
             foreach (DataRow row in tabela.Rows)
             {
                 dgvClientes.Rows.Add(
-                    row["id"],
-                    row["nome"],
-                    row["telefone"],
-                    row["estado"],
-                    row["cidade"],
-                    row["email"]
-                );
+                    row["id"], row["nome"], row["telefone"],
+                    row["estado"], row["cidade"], row["email"]);
             }
+
             dgvClientes.Columns["colID"].ReadOnly = true;
             AtualizarTotalItens();
         }
 
+        private void AplicarValidacoes()
+        {
+            foreach (DataGridViewRow row in dgvClientes.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string nome = row.Cells["colCliente"].Value?.ToString().Trim() ?? "";
+                string telefone = row.Cells["colTelefone"].Value?.ToString().Trim() ?? "";
+                string estado = row.Cells["colEstado"].Value?.ToString().Trim() ?? "";
+
+                if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(estado) || string.IsNullOrEmpty(telefone))
+                    throw new Exception($"Preencha Cliente, Estado e Telefone. Linha: {row.Index + 1}");
+
+                // Verifica se telefone está no formato exato
+                if (!Regex.IsMatch(telefone, @"^\(\d{2}\) \d{5}-\d{4}$"))
+                    throw new Exception($"Telefone inválido. Use o formato (00) 00000-0000. Linha: {row.Index + 1}");
+            }
+        }
+
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ClienteDAL dal = new ClienteDAL();
+
+            try
+            {
+                AplicarValidacoes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (DataGridViewRow row in dgvClientes.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                try
+                {
+                    int id = int.TryParse(row.Cells["colID"].Value?.ToString(), out int val) ? val : 0;
+                    string nome = row.Cells["colCliente"].Value?.ToString() ?? "";
+                    string telefone = row.Cells["colTelefone"].Value?.ToString() ?? "";
+                    string estado = row.Cells["colEstado"].Value?.ToString() ?? "";
+                    string cidade = row.Cells["colCidade"].Value?.ToString() ?? "";
+                    string email = row.Cells["colEmail"].Value?.ToString() ?? "";
+
+                    if (id > 0)
+                        dal.AtualizarCliente(id, nome, telefone, estado, cidade, email);
+                    else
+                        dal.InserirCliente(nome, telefone, estado, cidade, email);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao salvar cliente na linha {row.Index + 1}: {ex.Message}");
+                }
+            }
+
+            dal.ReorganizarIDs();
+            CarregarDadosClientes();
+            MessageBox.Show("Clientes salvos com sucesso!");
+        }
+
+        private void dgvClientes_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgvClientes.CurrentCell.OwningColumn.Name == "colTelefone" && e.Control is TextBox tb)
+            {
+                tb.KeyPress -= ApenasNumerosTelefone;
+                tb.KeyPress += ApenasNumerosTelefone;
+            }
+        }
+
+        private void ApenasNumerosTelefone(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
         private void btnNovoProduto_Click(object sender, EventArgs e)
         {
             int index = dgvClientes.Rows.Add();
@@ -135,33 +221,20 @@ namespace ProjetoPDV_Nathan
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.CurrentRow != null && !dgvClientes.CurrentRow.IsNewRow)
+            if (dgvClientes.SelectedRows.Count > 0)
             {
-                var row = dgvClientes.CurrentRow;
-
-                string nome = row.Cells["colCliente"].Value?.ToString() ?? "cliente";
-                DialogResult confirm = MessageBox.Show(
-                    $"Tem certeza que deseja excluir o cliente \"{nome}\"?",
-                    "Confirmar Exclusão",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-                if (confirm == DialogResult.Yes)
+                var row = dgvClientes.SelectedRows[0];
+                if (int.TryParse(row.Cells["colID"].Value?.ToString(), out int id))
                 {
-                    if (int.TryParse(row.Cells["colID"].Value?.ToString(), out int id))
-                    {
-                        ClienteDAL dal = new ClienteDAL();
-                        dal.ExcluirCliente(id); // remove do banco
-                        dgvClientes.Rows.Remove(row); // remove da grid
-
-                        AtualizarTotalItens(); // atualiza contagem
-                        MessageBox.Show("Cliente excluído com sucesso.", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    ClienteDAL dal = new ClienteDAL();
+                    dal.ExcluirCliente(id);                    
+                    dal.ReorganizarIDs();
+                    CarregarDadosClientes();
                 }
             }
             else
             {
-                MessageBox.Show("Selecione um cliente válido para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma linha para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -236,42 +309,64 @@ namespace ProjetoPDV_Nathan
 
             AtualizarTotalItens(); // Conta apenas visíveis
         }
+        private string RemoverAcentos(string texto)
+        {
+            if (string.IsNullOrWhiteSpace(texto))
+                return "";
+
+            var normalized = texto.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (char c in normalized)
+            {
+                if (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) != System.Globalization.UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (filtroAtivo) return;
 
-        }
+            filtroAtivo = true;
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            ClienteDAL dal = new ClienteDAL();
-
-            foreach (DataGridViewRow row in dgvClientes.Rows)
+            try
             {
-                if (row.IsNewRow) continue;
+                string termo = RemoverAcentos(textBox1.Text.Trim().ToLower());
 
-                try
+                foreach (DataGridViewRow row in dgvClientes.Rows)
                 {
-                    int id = int.TryParse(row.Cells["colID"].Value?.ToString(), out int val) ? val : 0;
-                    string nome = row.Cells["colCliente"].Value?.ToString() ?? "";
-                    string telefone = row.Cells["colTelefone"].Value?.ToString() ?? "";
-                    string estado = row.Cells["colEstado"].Value?.ToString() ?? "";
-                    string cidade = row.Cells["colCidade"].Value?.ToString() ?? "";
-                    string email = row.Cells["colEmail"].Value?.ToString() ?? "";
+                    if (row.IsNewRow) continue;
 
-                    if (id > 0)
-                        dal.AtualizarCliente(id, nome, telefone, estado, cidade, email);
-                    else
-                        dal.InserirCliente(nome, telefone, estado, cidade, email);
+                    bool visivel = false;
+
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        string valor = cell.Value?.ToString() ?? "";
+                        valor = RemoverAcentos(valor.ToLower());
+
+                        if (valor.Contains(termo))
+                        {
+                            visivel = true;
+                            break;
+                        }
+                    }
+
+                    row.Visible = visivel;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao salvar cliente na linha {row.Index + 1}: {ex.Message}");
-                }
+
+                AtualizarTotalItens();
+                dgvClientes.Refresh();
+            }
+            finally
+            {
+                filtroAtivo = false;
             }
 
-            MessageBox.Show("Clientes salvos com sucesso!");            
         }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {

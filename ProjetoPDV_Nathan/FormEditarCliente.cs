@@ -12,13 +12,8 @@ namespace ProjetoPDV_Nathan
         public string Cidade => txtCidade.Text;
         public string Email => txtEmail.Text;
 
-        private TextBox txtNome, txtTelefone, txtEstado, txtCidade, txtEmail;
-
-        private void FormEditarCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        private TextBox txtNome, txtEstado, txtCidade, txtEmail;
+        private MaskedTextBox txtTelefone;
         private Button btnSalvar, btnCancelar;
 
         public FormEditarCliente(string nome, string telefone, string estado, string cidade, string email)
@@ -26,12 +21,21 @@ namespace ProjetoPDV_Nathan
             this.Text = "Editar Cliente";
             this.Size = new Size(400, 350);
             this.StartPosition = FormStartPosition.CenterParent;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
 
             Label lblNome = new Label { Text = "Nome:", Location = new Point(20, 20), AutoSize = true };
             txtNome = new TextBox { Location = new Point(100, 20), Width = 250, Text = nome };
 
             Label lblTelefone = new Label { Text = "Telefone:", Location = new Point(20, 60), AutoSize = true };
-            txtTelefone = new TextBox { Location = new Point(100, 60), Width = 250, Text = telefone };
+            txtTelefone = new MaskedTextBox
+            {
+                Location = new Point(100, 60),
+                Width = 250,
+                Mask = "(00) 00000-0000",
+                Text = telefone
+            };
 
             Label lblEstado = new Label { Text = "Estado:", Location = new Point(20, 100), AutoSize = true };
             txtEstado = new TextBox { Location = new Point(100, 100), Width = 250, Text = estado };
@@ -45,7 +49,23 @@ namespace ProjetoPDV_Nathan
             btnSalvar = new Button { Text = "Salvar", Location = new Point(100, 230), Width = 100 };
             btnCancelar = new Button { Text = "Cancelar", Location = new Point(220, 230), Width = 100 };
 
-            btnSalvar.Click += (s, e) => this.DialogResult = DialogResult.OK;
+            btnSalvar.Click += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtNome.Text))
+                {
+                    MessageBox.Show("O campo 'Cliente' é obrigatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtEstado.Text))
+                {
+                    MessageBox.Show("O campo 'Estado' é obrigatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.DialogResult = DialogResult.OK;
+            };
+
             btnCancelar.Click += (s, e) => this.DialogResult = DialogResult.Cancel;
 
             this.Controls.AddRange(new Control[] {
