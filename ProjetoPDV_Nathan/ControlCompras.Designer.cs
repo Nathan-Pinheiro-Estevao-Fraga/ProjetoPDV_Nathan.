@@ -32,6 +32,35 @@
             this.panelCentral = new System.Windows.Forms.Panel();
             this.panelPai = new System.Windows.Forms.Panel();
             this.panelCentro = new System.Windows.Forms.Panel();
+            this.panelUnidade = new System.Windows.Forms.Panel();
+            this.textBoxUnidade = new System.Windows.Forms.TextBox();
+            this.labelUnidade = new System.Windows.Forms.Label();
+            this.panelValorComissão = new System.Windows.Forms.Panel();
+            this.textBoxValorComissão1 = new System.Windows.Forms.TextBox();
+            this.labelValorComissão1 = new System.Windows.Forms.Label();
+            this.panelValorDesconto = new System.Windows.Forms.Panel();
+            this.textBoxValorDesconto = new System.Windows.Forms.TextBox();
+            this.labelValorDesconto = new System.Windows.Forms.Label();
+            this.panelDesconto = new System.Windows.Forms.Panel();
+            this.textBoxDeconto = new System.Windows.Forms.TextBox();
+            this.labelDeconto = new System.Windows.Forms.Label();
+            this.panelReferência = new System.Windows.Forms.Panel();
+            this.textBoxReferência = new System.Windows.Forms.TextBox();
+            this.labelReferência = new System.Windows.Forms.Label();
+            this.PanelDescricaoProduto = new System.Windows.Forms.Panel();
+            this.textBoxDescricaoProduto = new System.Windows.Forms.TextBox();
+            this.panelQuantidade = new System.Windows.Forms.Panel();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
+            this.labelQuantidade = new System.Windows.Forms.Label();
+            this.panelSubtotalItem = new System.Windows.Forms.Panel();
+            this.textBoxSubtotaldoItem = new System.Windows.Forms.TextBox();
+            this.labelSubtotalItem = new System.Windows.Forms.Label();
+            this.panelComissão = new System.Windows.Forms.Panel();
+            this.textBoxComissão1 = new System.Windows.Forms.TextBox();
+            this.labelComissão1 = new System.Windows.Forms.Label();
+            this.panelPreçoUnitário = new System.Windows.Forms.Panel();
+            this.textBoxPreçoUnitário = new System.Windows.Forms.TextBox();
+            this.labelPreçoUnitário = new System.Windows.Forms.Label();
             this.pictureboxImagemProduto = new System.Windows.Forms.PictureBox();
             this.panelSuperior1 = new System.Windows.Forms.Panel();
             this.textBoxHora = new System.Windows.Forms.TextBox();
@@ -91,38 +120,19 @@
             this.pictureBoxNovoPedido = new System.Windows.Forms.PictureBox();
             this.labelNovoPedido = new System.Windows.Forms.Label();
             this.labelVendaPV = new System.Windows.Forms.Label();
-            this.panelUnidade = new System.Windows.Forms.Panel();
-            this.textBoxUnidade = new System.Windows.Forms.TextBox();
-            this.labelUnidade = new System.Windows.Forms.Label();
-            this.panelValorComissão = new System.Windows.Forms.Panel();
-            this.textBoxValorComissão1 = new System.Windows.Forms.TextBox();
-            this.labelValorComissão1 = new System.Windows.Forms.Label();
-            this.panelValorDesconto = new System.Windows.Forms.Panel();
-            this.textBoxValorDesconto = new System.Windows.Forms.TextBox();
-            this.labelValorDesconto = new System.Windows.Forms.Label();
-            this.panelDesconto = new System.Windows.Forms.Panel();
-            this.textBoxDeconto = new System.Windows.Forms.TextBox();
-            this.labelDeconto = new System.Windows.Forms.Label();
-            this.panelReferência = new System.Windows.Forms.Panel();
-            this.textBoxReferência = new System.Windows.Forms.TextBox();
-            this.labelReferência = new System.Windows.Forms.Label();
-            this.PanelDescricaoProduto = new System.Windows.Forms.Panel();
-            this.textBoxDescricaoProduto = new System.Windows.Forms.TextBox();
-            this.panelQuantidade = new System.Windows.Forms.Panel();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.labelQuantidade = new System.Windows.Forms.Label();
-            this.panelSubtotalItem = new System.Windows.Forms.Panel();
-            this.textBoxSubtotaldoItem = new System.Windows.Forms.TextBox();
-            this.labelSubtotalItem = new System.Windows.Forms.Label();
-            this.panelComissão = new System.Windows.Forms.Panel();
-            this.textBoxComissão1 = new System.Windows.Forms.TextBox();
-            this.labelComissão1 = new System.Windows.Forms.Label();
-            this.panelPreçoUnitário = new System.Windows.Forms.Panel();
-            this.textBoxPreçoUnitário = new System.Windows.Forms.TextBox();
-            this.labelPreçoUnitário = new System.Windows.Forms.Label();
             this.panelCentral.SuspendLayout();
             this.panelPai.SuspendLayout();
             this.panelCentro.SuspendLayout();
+            this.panelUnidade.SuspendLayout();
+            this.panelValorComissão.SuspendLayout();
+            this.panelValorDesconto.SuspendLayout();
+            this.panelDesconto.SuspendLayout();
+            this.panelReferência.SuspendLayout();
+            this.PanelDescricaoProduto.SuspendLayout();
+            this.panelQuantidade.SuspendLayout();
+            this.panelSubtotalItem.SuspendLayout();
+            this.panelComissão.SuspendLayout();
+            this.panelPreçoUnitário.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxImagemProduto)).BeginInit();
             this.panelSuperior1.SuspendLayout();
             this.panelCentral1.SuspendLayout();
@@ -143,16 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCancelarAção)).BeginInit();
             this.panelNovoPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoPedido)).BeginInit();
-            this.panelUnidade.SuspendLayout();
-            this.panelValorComissão.SuspendLayout();
-            this.panelValorDesconto.SuspendLayout();
-            this.panelDesconto.SuspendLayout();
-            this.panelReferência.SuspendLayout();
-            this.PanelDescricaoProduto.SuspendLayout();
-            this.panelQuantidade.SuspendLayout();
-            this.panelSubtotalItem.SuspendLayout();
-            this.panelComissão.SuspendLayout();
-            this.panelPreçoUnitário.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCentral
@@ -198,6 +198,344 @@
             this.panelCentro.Name = "panelCentro";
             this.panelCentro.Size = new System.Drawing.Size(1047, 375);
             this.panelCentro.TabIndex = 38;
+            // 
+            // panelUnidade
+            // 
+            this.panelUnidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelUnidade.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelUnidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUnidade.Controls.Add(this.textBoxUnidade);
+            this.panelUnidade.Controls.Add(this.labelUnidade);
+            this.panelUnidade.Location = new System.Drawing.Point(322, 98);
+            this.panelUnidade.Name = "panelUnidade";
+            this.panelUnidade.Size = new System.Drawing.Size(152, 100);
+            this.panelUnidade.TabIndex = 38;
+            // 
+            // textBoxUnidade
+            // 
+            this.textBoxUnidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxUnidade.Location = new System.Drawing.Point(-1, 28);
+            this.textBoxUnidade.Multiline = true;
+            this.textBoxUnidade.Name = "textBoxUnidade";
+            this.textBoxUnidade.Size = new System.Drawing.Size(152, 72);
+            this.textBoxUnidade.TabIndex = 33;
+            this.textBoxUnidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelUnidade
+            // 
+            this.labelUnidade.AutoSize = true;
+            this.labelUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelUnidade.ForeColor = System.Drawing.Color.Black;
+            this.labelUnidade.Location = new System.Drawing.Point(4, 7);
+            this.labelUnidade.Name = "labelUnidade";
+            this.labelUnidade.Size = new System.Drawing.Size(68, 17);
+            this.labelUnidade.TabIndex = 0;
+            this.labelUnidade.Text = "Unidade";
+            // 
+            // panelValorComissão
+            // 
+            this.panelValorComissão.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelValorComissão.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelValorComissão.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelValorComissão.Controls.Add(this.textBoxValorComissão1);
+            this.panelValorComissão.Controls.Add(this.labelValorComissão1);
+            this.panelValorComissão.Location = new System.Drawing.Point(451, 283);
+            this.panelValorComissão.Name = "panelValorComissão";
+            this.panelValorComissão.Size = new System.Drawing.Size(262, 92);
+            this.panelValorComissão.TabIndex = 39;
+            // 
+            // textBoxValorComissão1
+            // 
+            this.textBoxValorComissão1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxValorComissão1.Location = new System.Drawing.Point(-1, 28);
+            this.textBoxValorComissão1.Multiline = true;
+            this.textBoxValorComissão1.Name = "textBoxValorComissão1";
+            this.textBoxValorComissão1.Size = new System.Drawing.Size(262, 61);
+            this.textBoxValorComissão1.TabIndex = 33;
+            this.textBoxValorComissão1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelValorComissão1
+            // 
+            this.labelValorComissão1.AutoSize = true;
+            this.labelValorComissão1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelValorComissão1.ForeColor = System.Drawing.Color.Black;
+            this.labelValorComissão1.Location = new System.Drawing.Point(10, 6);
+            this.labelValorComissão1.Name = "labelValorComissão1";
+            this.labelValorComissão1.Size = new System.Drawing.Size(120, 17);
+            this.labelValorComissão1.TabIndex = 3;
+            this.labelValorComissão1.Text = "Valor Comissão";
+            // 
+            // panelValorDesconto
+            // 
+            this.panelValorDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelValorDesconto.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelValorDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelValorDesconto.Controls.Add(this.textBoxValorDesconto);
+            this.panelValorDesconto.Controls.Add(this.labelValorDesconto);
+            this.panelValorDesconto.Location = new System.Drawing.Point(805, 198);
+            this.panelValorDesconto.Name = "panelValorDesconto";
+            this.panelValorDesconto.Size = new System.Drawing.Size(240, 85);
+            this.panelValorDesconto.TabIndex = 40;
+            // 
+            // textBoxValorDesconto
+            // 
+            this.textBoxValorDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxValorDesconto.Location = new System.Drawing.Point(-1, 24);
+            this.textBoxValorDesconto.Multiline = true;
+            this.textBoxValorDesconto.Name = "textBoxValorDesconto";
+            this.textBoxValorDesconto.Size = new System.Drawing.Size(241, 61);
+            this.textBoxValorDesconto.TabIndex = 33;
+            this.textBoxValorDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelValorDesconto
+            // 
+            this.labelValorDesconto.AutoSize = true;
+            this.labelValorDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelValorDesconto.ForeColor = System.Drawing.Color.Black;
+            this.labelValorDesconto.Location = new System.Drawing.Point(3, 3);
+            this.labelValorDesconto.Name = "labelValorDesconto";
+            this.labelValorDesconto.Size = new System.Drawing.Size(119, 17);
+            this.labelValorDesconto.TabIndex = 3;
+            this.labelValorDesconto.Text = "Valor Desconto";
+            // 
+            // panelDesconto
+            // 
+            this.panelDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDesconto.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDesconto.Controls.Add(this.textBoxDeconto);
+            this.panelDesconto.Controls.Add(this.labelDeconto);
+            this.panelDesconto.Location = new System.Drawing.Point(693, 198);
+            this.panelDesconto.Name = "panelDesconto";
+            this.panelDesconto.Size = new System.Drawing.Size(112, 85);
+            this.panelDesconto.TabIndex = 41;
+            // 
+            // textBoxDeconto
+            // 
+            this.textBoxDeconto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDeconto.Location = new System.Drawing.Point(-1, 24);
+            this.textBoxDeconto.Multiline = true;
+            this.textBoxDeconto.Name = "textBoxDeconto";
+            this.textBoxDeconto.Size = new System.Drawing.Size(112, 61);
+            this.textBoxDeconto.TabIndex = 33;
+            this.textBoxDeconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelDeconto
+            // 
+            this.labelDeconto.AutoSize = true;
+            this.labelDeconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelDeconto.ForeColor = System.Drawing.Color.Black;
+            this.labelDeconto.Location = new System.Drawing.Point(3, 3);
+            this.labelDeconto.Name = "labelDeconto";
+            this.labelDeconto.Size = new System.Drawing.Size(85, 17);
+            this.labelDeconto.TabIndex = 2;
+            this.labelDeconto.Text = "Des. em %";
+            // 
+            // panelReferência
+            // 
+            this.panelReferência.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelReferência.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelReferência.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelReferência.Controls.Add(this.textBoxReferência);
+            this.panelReferência.Controls.Add(this.labelReferência);
+            this.panelReferência.Location = new System.Drawing.Point(322, 198);
+            this.panelReferência.Name = "panelReferência";
+            this.panelReferência.Size = new System.Drawing.Size(371, 85);
+            this.panelReferência.TabIndex = 42;
+            // 
+            // textBoxReferência
+            // 
+            this.textBoxReferência.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxReferência.Location = new System.Drawing.Point(-1, 24);
+            this.textBoxReferência.Multiline = true;
+            this.textBoxReferência.Name = "textBoxReferência";
+            this.textBoxReferência.Size = new System.Drawing.Size(371, 61);
+            this.textBoxReferência.TabIndex = 35;
+            this.textBoxReferência.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelReferência
+            // 
+            this.labelReferência.AutoSize = true;
+            this.labelReferência.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelReferência.ForeColor = System.Drawing.Color.Black;
+            this.labelReferência.Location = new System.Drawing.Point(4, 3);
+            this.labelReferência.Name = "labelReferência";
+            this.labelReferência.Size = new System.Drawing.Size(87, 17);
+            this.labelReferência.TabIndex = 1;
+            this.labelReferência.Text = "Referência";
+            // 
+            // PanelDescricaoProduto
+            // 
+            this.PanelDescricaoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelDescricaoProduto.BackColor = System.Drawing.Color.White;
+            this.PanelDescricaoProduto.Controls.Add(this.textBoxDescricaoProduto);
+            this.PanelDescricaoProduto.Location = new System.Drawing.Point(323, 0);
+            this.PanelDescricaoProduto.Name = "PanelDescricaoProduto";
+            this.PanelDescricaoProduto.Size = new System.Drawing.Size(722, 98);
+            this.PanelDescricaoProduto.TabIndex = 43;
+            // 
+            // textBoxDescricaoProduto
+            // 
+            this.textBoxDescricaoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDescricaoProduto.Location = new System.Drawing.Point(-1, 0);
+            this.textBoxDescricaoProduto.Multiline = true;
+            this.textBoxDescricaoProduto.Name = "textBoxDescricaoProduto";
+            this.textBoxDescricaoProduto.Size = new System.Drawing.Size(723, 99);
+            this.textBoxDescricaoProduto.TabIndex = 36;
+            this.textBoxDescricaoProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panelQuantidade
+            // 
+            this.panelQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelQuantidade.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelQuantidade.Controls.Add(this.textBoxQuantidade);
+            this.panelQuantidade.Controls.Add(this.labelQuantidade);
+            this.panelQuantidade.Location = new System.Drawing.Point(473, 98);
+            this.panelQuantidade.Name = "panelQuantidade";
+            this.panelQuantidade.Size = new System.Drawing.Size(203, 100);
+            this.panelQuantidade.TabIndex = 44;
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxQuantidade.Location = new System.Drawing.Point(-1, 28);
+            this.textBoxQuantidade.Multiline = true;
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(203, 72);
+            this.textBoxQuantidade.TabIndex = 34;
+            this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelQuantidade
+            // 
+            this.labelQuantidade.AutoSize = true;
+            this.labelQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelQuantidade.ForeColor = System.Drawing.Color.Black;
+            this.labelQuantidade.Location = new System.Drawing.Point(20, 7);
+            this.labelQuantidade.Name = "labelQuantidade";
+            this.labelQuantidade.Size = new System.Drawing.Size(92, 17);
+            this.labelQuantidade.TabIndex = 1;
+            this.labelQuantidade.Text = "Quantidade";
+            // 
+            // panelSubtotalItem
+            // 
+            this.panelSubtotalItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSubtotalItem.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelSubtotalItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSubtotalItem.Controls.Add(this.textBoxSubtotaldoItem);
+            this.panelSubtotalItem.Controls.Add(this.labelSubtotalItem);
+            this.panelSubtotalItem.Location = new System.Drawing.Point(713, 283);
+            this.panelSubtotalItem.Name = "panelSubtotalItem";
+            this.panelSubtotalItem.Size = new System.Drawing.Size(333, 92);
+            this.panelSubtotalItem.TabIndex = 45;
+            // 
+            // textBoxSubtotaldoItem
+            // 
+            this.textBoxSubtotaldoItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSubtotaldoItem.Location = new System.Drawing.Point(-2, 28);
+            this.textBoxSubtotaldoItem.Multiline = true;
+            this.textBoxSubtotaldoItem.Name = "textBoxSubtotaldoItem";
+            this.textBoxSubtotaldoItem.Size = new System.Drawing.Size(334, 61);
+            this.textBoxSubtotaldoItem.TabIndex = 34;
+            this.textBoxSubtotaldoItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelSubtotalItem
+            // 
+            this.labelSubtotalItem.AutoSize = true;
+            this.labelSubtotalItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelSubtotalItem.ForeColor = System.Drawing.Color.Black;
+            this.labelSubtotalItem.Location = new System.Drawing.Point(18, 6);
+            this.labelSubtotalItem.Name = "labelSubtotalItem";
+            this.labelSubtotalItem.Size = new System.Drawing.Size(126, 17);
+            this.labelSubtotalItem.TabIndex = 4;
+            this.labelSubtotalItem.Text = "Subtotal do Item";
+            // 
+            // panelComissão
+            // 
+            this.panelComissão.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelComissão.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelComissão.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelComissão.Controls.Add(this.textBoxComissão1);
+            this.panelComissão.Controls.Add(this.labelComissão1);
+            this.panelComissão.Location = new System.Drawing.Point(322, 283);
+            this.panelComissão.Name = "panelComissão";
+            this.panelComissão.Size = new System.Drawing.Size(129, 92);
+            this.panelComissão.TabIndex = 46;
+            // 
+            // textBoxComissão1
+            // 
+            this.textBoxComissão1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxComissão1.Location = new System.Drawing.Point(-1, 28);
+            this.textBoxComissão1.Multiline = true;
+            this.textBoxComissão1.Name = "textBoxComissão1";
+            this.textBoxComissão1.Size = new System.Drawing.Size(129, 61);
+            this.textBoxComissão1.TabIndex = 32;
+            this.textBoxComissão1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelComissão1
+            // 
+            this.labelComissão1.AutoSize = true;
+            this.labelComissão1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelComissão1.ForeColor = System.Drawing.Color.Black;
+            this.labelComissão1.Location = new System.Drawing.Point(3, 6);
+            this.labelComissão1.Name = "labelComissão1";
+            this.labelComissão1.Size = new System.Drawing.Size(121, 17);
+            this.labelComissão1.TabIndex = 2;
+            this.labelComissão1.Text = "Comissão em %";
+            // 
+            // panelPreçoUnitário
+            // 
+            this.panelPreçoUnitário.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPreçoUnitário.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelPreçoUnitário.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPreçoUnitário.Controls.Add(this.textBoxPreçoUnitário);
+            this.panelPreçoUnitário.Controls.Add(this.labelPreçoUnitário);
+            this.panelPreçoUnitário.Location = new System.Drawing.Point(676, 98);
+            this.panelPreçoUnitário.Name = "panelPreçoUnitário";
+            this.panelPreçoUnitário.Size = new System.Drawing.Size(370, 100);
+            this.panelPreçoUnitário.TabIndex = 47;
+            // 
+            // textBoxPreçoUnitário
+            // 
+            this.textBoxPreçoUnitário.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPreçoUnitário.Location = new System.Drawing.Point(-1, 28);
+            this.textBoxPreçoUnitário.Multiline = true;
+            this.textBoxPreçoUnitário.Name = "textBoxPreçoUnitário";
+            this.textBoxPreçoUnitário.Size = new System.Drawing.Size(370, 72);
+            this.textBoxPreçoUnitário.TabIndex = 35;
+            this.textBoxPreçoUnitário.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelPreçoUnitário
+            // 
+            this.labelPreçoUnitário.AutoSize = true;
+            this.labelPreçoUnitário.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelPreçoUnitário.ForeColor = System.Drawing.Color.Black;
+            this.labelPreçoUnitário.Location = new System.Drawing.Point(20, 7);
+            this.labelPreçoUnitário.Name = "labelPreçoUnitário";
+            this.labelPreçoUnitário.Size = new System.Drawing.Size(112, 17);
+            this.labelPreçoUnitário.TabIndex = 2;
+            this.labelPreçoUnitário.Text = "Preço Unitário";
             // 
             // pictureboxImagemProduto
             // 
@@ -579,6 +917,7 @@
             this.panelInserirProduto.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInserirProduto.Controls.Add(this.pictureBoxInserir);
             this.panelInserirProduto.Controls.Add(this.labelInserirProduto);
+            this.panelInserirProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelInserirProduto.Location = new System.Drawing.Point(886, 9);
             this.panelInserirProduto.Name = "panelInserirProduto";
             this.panelInserirProduto.Size = new System.Drawing.Size(94, 48);
@@ -611,6 +950,7 @@
             this.panelSalvarPedido.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelSalvarPedido.Controls.Add(this.pictureBox3);
             this.panelSalvarPedido.Controls.Add(this.labelSalvarPedido);
+            this.panelSalvarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelSalvarPedido.Location = new System.Drawing.Point(498, 9);
             this.panelSalvarPedido.Name = "panelSalvarPedido";
             this.panelSalvarPedido.Size = new System.Drawing.Size(94, 48);
@@ -643,6 +983,7 @@
             this.panelImprimirPedido.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelImprimirPedido.Controls.Add(this.pictureBoxImprimir);
             this.panelImprimirPedido.Controls.Add(this.labelImprimirPedido);
+            this.panelImprimirPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelImprimirPedido.Location = new System.Drawing.Point(789, 9);
             this.panelImprimirPedido.Name = "panelImprimirPedido";
             this.panelImprimirPedido.Size = new System.Drawing.Size(94, 48);
@@ -675,6 +1016,7 @@
             this.panelDevolução.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelDevolução.Controls.Add(this.pictureBoxDevolução);
             this.panelDevolução.Controls.Add(this.labelDevolução);
+            this.panelDevolução.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelDevolução.Location = new System.Drawing.Point(692, 9);
             this.panelDevolução.Name = "panelDevolução";
             this.panelDevolução.Size = new System.Drawing.Size(94, 48);
@@ -707,6 +1049,7 @@
             this.panelEditar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelEditar.Controls.Add(this.pictureBoxEditar);
             this.panelEditar.Controls.Add(this.labelEditar);
+            this.panelEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelEditar.Location = new System.Drawing.Point(401, 9);
             this.panelEditar.Name = "panelEditar";
             this.panelEditar.Size = new System.Drawing.Size(94, 48);
@@ -739,6 +1082,7 @@
             this.panelFinalizarPedido.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFinalizarPedido.Controls.Add(this.pictureBoxFinaliPedido);
             this.panelFinalizarPedido.Controls.Add(this.labelFinalizarPedido);
+            this.panelFinalizarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelFinalizarPedido.Location = new System.Drawing.Point(595, 9);
             this.panelFinalizarPedido.Name = "panelFinalizarPedido";
             this.panelFinalizarPedido.Size = new System.Drawing.Size(94, 48);
@@ -772,6 +1116,7 @@
             this.panelCancelarAção.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelCancelarAção.Controls.Add(this.pictureBoxCancelarAção);
             this.panelCancelarAção.Controls.Add(this.labelCancelarAção);
+            this.panelCancelarAção.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelCancelarAção.Location = new System.Drawing.Point(304, 9);
             this.panelCancelarAção.Name = "panelCancelarAção";
             this.panelCancelarAção.Size = new System.Drawing.Size(94, 48);
@@ -804,6 +1149,7 @@
             this.panelNovoPedido.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelNovoPedido.Controls.Add(this.pictureBoxNovoPedido);
             this.panelNovoPedido.Controls.Add(this.labelNovoPedido);
+            this.panelNovoPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelNovoPedido.Location = new System.Drawing.Point(204, 9);
             this.panelNovoPedido.Name = "panelNovoPedido";
             this.panelNovoPedido.Size = new System.Drawing.Size(94, 48);
@@ -844,344 +1190,6 @@
             this.labelVendaPV.TabIndex = 0;
             this.labelVendaPV.Text = "Venda(PDV)";
             // 
-            // panelUnidade
-            // 
-            this.panelUnidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelUnidade.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelUnidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUnidade.Controls.Add(this.textBoxUnidade);
-            this.panelUnidade.Controls.Add(this.labelUnidade);
-            this.panelUnidade.Location = new System.Drawing.Point(322, 98);
-            this.panelUnidade.Name = "panelUnidade";
-            this.panelUnidade.Size = new System.Drawing.Size(152, 100);
-            this.panelUnidade.TabIndex = 38;
-            // 
-            // textBoxUnidade
-            // 
-            this.textBoxUnidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUnidade.Location = new System.Drawing.Point(-1, 28);
-            this.textBoxUnidade.Multiline = true;
-            this.textBoxUnidade.Name = "textBoxUnidade";
-            this.textBoxUnidade.Size = new System.Drawing.Size(152, 72);
-            this.textBoxUnidade.TabIndex = 33;
-            this.textBoxUnidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelUnidade
-            // 
-            this.labelUnidade.AutoSize = true;
-            this.labelUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelUnidade.ForeColor = System.Drawing.Color.Black;
-            this.labelUnidade.Location = new System.Drawing.Point(4, 7);
-            this.labelUnidade.Name = "labelUnidade";
-            this.labelUnidade.Size = new System.Drawing.Size(68, 17);
-            this.labelUnidade.TabIndex = 0;
-            this.labelUnidade.Text = "Unidade";
-            // 
-            // panelValorComissão
-            // 
-            this.panelValorComissão.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelValorComissão.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelValorComissão.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelValorComissão.Controls.Add(this.textBoxValorComissão1);
-            this.panelValorComissão.Controls.Add(this.labelValorComissão1);
-            this.panelValorComissão.Location = new System.Drawing.Point(451, 283);
-            this.panelValorComissão.Name = "panelValorComissão";
-            this.panelValorComissão.Size = new System.Drawing.Size(262, 92);
-            this.panelValorComissão.TabIndex = 39;
-            // 
-            // textBoxValorComissão1
-            // 
-            this.textBoxValorComissão1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxValorComissão1.Location = new System.Drawing.Point(-1, 28);
-            this.textBoxValorComissão1.Multiline = true;
-            this.textBoxValorComissão1.Name = "textBoxValorComissão1";
-            this.textBoxValorComissão1.Size = new System.Drawing.Size(262, 61);
-            this.textBoxValorComissão1.TabIndex = 33;
-            this.textBoxValorComissão1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelValorComissão1
-            // 
-            this.labelValorComissão1.AutoSize = true;
-            this.labelValorComissão1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelValorComissão1.ForeColor = System.Drawing.Color.Black;
-            this.labelValorComissão1.Location = new System.Drawing.Point(10, 6);
-            this.labelValorComissão1.Name = "labelValorComissão1";
-            this.labelValorComissão1.Size = new System.Drawing.Size(120, 17);
-            this.labelValorComissão1.TabIndex = 3;
-            this.labelValorComissão1.Text = "Valor Comissão";
-            // 
-            // panelValorDesconto
-            // 
-            this.panelValorDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelValorDesconto.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelValorDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelValorDesconto.Controls.Add(this.textBoxValorDesconto);
-            this.panelValorDesconto.Controls.Add(this.labelValorDesconto);
-            this.panelValorDesconto.Location = new System.Drawing.Point(805, 198);
-            this.panelValorDesconto.Name = "panelValorDesconto";
-            this.panelValorDesconto.Size = new System.Drawing.Size(240, 85);
-            this.panelValorDesconto.TabIndex = 40;
-            // 
-            // textBoxValorDesconto
-            // 
-            this.textBoxValorDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxValorDesconto.Location = new System.Drawing.Point(-1, 24);
-            this.textBoxValorDesconto.Multiline = true;
-            this.textBoxValorDesconto.Name = "textBoxValorDesconto";
-            this.textBoxValorDesconto.Size = new System.Drawing.Size(241, 61);
-            this.textBoxValorDesconto.TabIndex = 33;
-            this.textBoxValorDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelValorDesconto
-            // 
-            this.labelValorDesconto.AutoSize = true;
-            this.labelValorDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelValorDesconto.ForeColor = System.Drawing.Color.Black;
-            this.labelValorDesconto.Location = new System.Drawing.Point(3, 3);
-            this.labelValorDesconto.Name = "labelValorDesconto";
-            this.labelValorDesconto.Size = new System.Drawing.Size(119, 17);
-            this.labelValorDesconto.TabIndex = 3;
-            this.labelValorDesconto.Text = "Valor Desconto";
-            // 
-            // panelDesconto
-            // 
-            this.panelDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDesconto.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelDesconto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDesconto.Controls.Add(this.textBoxDeconto);
-            this.panelDesconto.Controls.Add(this.labelDeconto);
-            this.panelDesconto.Location = new System.Drawing.Point(693, 198);
-            this.panelDesconto.Name = "panelDesconto";
-            this.panelDesconto.Size = new System.Drawing.Size(112, 85);
-            this.panelDesconto.TabIndex = 41;
-            // 
-            // textBoxDeconto
-            // 
-            this.textBoxDeconto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDeconto.Location = new System.Drawing.Point(-1, 24);
-            this.textBoxDeconto.Multiline = true;
-            this.textBoxDeconto.Name = "textBoxDeconto";
-            this.textBoxDeconto.Size = new System.Drawing.Size(112, 61);
-            this.textBoxDeconto.TabIndex = 33;
-            this.textBoxDeconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelDeconto
-            // 
-            this.labelDeconto.AutoSize = true;
-            this.labelDeconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelDeconto.ForeColor = System.Drawing.Color.Black;
-            this.labelDeconto.Location = new System.Drawing.Point(3, 3);
-            this.labelDeconto.Name = "labelDeconto";
-            this.labelDeconto.Size = new System.Drawing.Size(85, 17);
-            this.labelDeconto.TabIndex = 2;
-            this.labelDeconto.Text = "Des. em %";
-            // 
-            // panelReferência
-            // 
-            this.panelReferência.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelReferência.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelReferência.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelReferência.Controls.Add(this.textBoxReferência);
-            this.panelReferência.Controls.Add(this.labelReferência);
-            this.panelReferência.Location = new System.Drawing.Point(322, 198);
-            this.panelReferência.Name = "panelReferência";
-            this.panelReferência.Size = new System.Drawing.Size(371, 85);
-            this.panelReferência.TabIndex = 42;
-            // 
-            // textBoxReferência
-            // 
-            this.textBoxReferência.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxReferência.Location = new System.Drawing.Point(-1, 24);
-            this.textBoxReferência.Multiline = true;
-            this.textBoxReferência.Name = "textBoxReferência";
-            this.textBoxReferência.Size = new System.Drawing.Size(371, 61);
-            this.textBoxReferência.TabIndex = 35;
-            this.textBoxReferência.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelReferência
-            // 
-            this.labelReferência.AutoSize = true;
-            this.labelReferência.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelReferência.ForeColor = System.Drawing.Color.Black;
-            this.labelReferência.Location = new System.Drawing.Point(4, 3);
-            this.labelReferência.Name = "labelReferência";
-            this.labelReferência.Size = new System.Drawing.Size(87, 17);
-            this.labelReferência.TabIndex = 1;
-            this.labelReferência.Text = "Referência";
-            // 
-            // PanelDescricaoProduto
-            // 
-            this.PanelDescricaoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelDescricaoProduto.BackColor = System.Drawing.Color.White;
-            this.PanelDescricaoProduto.Controls.Add(this.textBoxDescricaoProduto);
-            this.PanelDescricaoProduto.Location = new System.Drawing.Point(323, 0);
-            this.PanelDescricaoProduto.Name = "PanelDescricaoProduto";
-            this.PanelDescricaoProduto.Size = new System.Drawing.Size(722, 98);
-            this.PanelDescricaoProduto.TabIndex = 43;
-            // 
-            // textBoxDescricaoProduto
-            // 
-            this.textBoxDescricaoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDescricaoProduto.Location = new System.Drawing.Point(-1, 0);
-            this.textBoxDescricaoProduto.Multiline = true;
-            this.textBoxDescricaoProduto.Name = "textBoxDescricaoProduto";
-            this.textBoxDescricaoProduto.Size = new System.Drawing.Size(723, 99);
-            this.textBoxDescricaoProduto.TabIndex = 36;
-            this.textBoxDescricaoProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panelQuantidade
-            // 
-            this.panelQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelQuantidade.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelQuantidade.Controls.Add(this.textBoxQuantidade);
-            this.panelQuantidade.Controls.Add(this.labelQuantidade);
-            this.panelQuantidade.Location = new System.Drawing.Point(473, 98);
-            this.panelQuantidade.Name = "panelQuantidade";
-            this.panelQuantidade.Size = new System.Drawing.Size(203, 100);
-            this.panelQuantidade.TabIndex = 44;
-            // 
-            // textBoxQuantidade
-            // 
-            this.textBoxQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxQuantidade.Location = new System.Drawing.Point(-1, 28);
-            this.textBoxQuantidade.Multiline = true;
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(203, 72);
-            this.textBoxQuantidade.TabIndex = 34;
-            this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelQuantidade
-            // 
-            this.labelQuantidade.AutoSize = true;
-            this.labelQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelQuantidade.ForeColor = System.Drawing.Color.Black;
-            this.labelQuantidade.Location = new System.Drawing.Point(20, 7);
-            this.labelQuantidade.Name = "labelQuantidade";
-            this.labelQuantidade.Size = new System.Drawing.Size(92, 17);
-            this.labelQuantidade.TabIndex = 1;
-            this.labelQuantidade.Text = "Quantidade";
-            // 
-            // panelSubtotalItem
-            // 
-            this.panelSubtotalItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSubtotalItem.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelSubtotalItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSubtotalItem.Controls.Add(this.textBoxSubtotaldoItem);
-            this.panelSubtotalItem.Controls.Add(this.labelSubtotalItem);
-            this.panelSubtotalItem.Location = new System.Drawing.Point(713, 283);
-            this.panelSubtotalItem.Name = "panelSubtotalItem";
-            this.panelSubtotalItem.Size = new System.Drawing.Size(333, 92);
-            this.panelSubtotalItem.TabIndex = 45;
-            // 
-            // textBoxSubtotaldoItem
-            // 
-            this.textBoxSubtotaldoItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSubtotaldoItem.Location = new System.Drawing.Point(-2, 28);
-            this.textBoxSubtotaldoItem.Multiline = true;
-            this.textBoxSubtotaldoItem.Name = "textBoxSubtotaldoItem";
-            this.textBoxSubtotaldoItem.Size = new System.Drawing.Size(334, 61);
-            this.textBoxSubtotaldoItem.TabIndex = 34;
-            this.textBoxSubtotaldoItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelSubtotalItem
-            // 
-            this.labelSubtotalItem.AutoSize = true;
-            this.labelSubtotalItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelSubtotalItem.ForeColor = System.Drawing.Color.Black;
-            this.labelSubtotalItem.Location = new System.Drawing.Point(18, 6);
-            this.labelSubtotalItem.Name = "labelSubtotalItem";
-            this.labelSubtotalItem.Size = new System.Drawing.Size(126, 17);
-            this.labelSubtotalItem.TabIndex = 4;
-            this.labelSubtotalItem.Text = "Subtotal do Item";
-            // 
-            // panelComissão
-            // 
-            this.panelComissão.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelComissão.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelComissão.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelComissão.Controls.Add(this.textBoxComissão1);
-            this.panelComissão.Controls.Add(this.labelComissão1);
-            this.panelComissão.Location = new System.Drawing.Point(322, 283);
-            this.panelComissão.Name = "panelComissão";
-            this.panelComissão.Size = new System.Drawing.Size(129, 92);
-            this.panelComissão.TabIndex = 46;
-            // 
-            // textBoxComissão1
-            // 
-            this.textBoxComissão1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxComissão1.Location = new System.Drawing.Point(-1, 28);
-            this.textBoxComissão1.Multiline = true;
-            this.textBoxComissão1.Name = "textBoxComissão1";
-            this.textBoxComissão1.Size = new System.Drawing.Size(129, 61);
-            this.textBoxComissão1.TabIndex = 32;
-            this.textBoxComissão1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelComissão1
-            // 
-            this.labelComissão1.AutoSize = true;
-            this.labelComissão1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelComissão1.ForeColor = System.Drawing.Color.Black;
-            this.labelComissão1.Location = new System.Drawing.Point(3, 6);
-            this.labelComissão1.Name = "labelComissão1";
-            this.labelComissão1.Size = new System.Drawing.Size(121, 17);
-            this.labelComissão1.TabIndex = 2;
-            this.labelComissão1.Text = "Comissão em %";
-            // 
-            // panelPreçoUnitário
-            // 
-            this.panelPreçoUnitário.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPreçoUnitário.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelPreçoUnitário.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelPreçoUnitário.Controls.Add(this.textBoxPreçoUnitário);
-            this.panelPreçoUnitário.Controls.Add(this.labelPreçoUnitário);
-            this.panelPreçoUnitário.Location = new System.Drawing.Point(676, 98);
-            this.panelPreçoUnitário.Name = "panelPreçoUnitário";
-            this.panelPreçoUnitário.Size = new System.Drawing.Size(370, 100);
-            this.panelPreçoUnitário.TabIndex = 47;
-            // 
-            // textBoxPreçoUnitário
-            // 
-            this.textBoxPreçoUnitário.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPreçoUnitário.Location = new System.Drawing.Point(-1, 28);
-            this.textBoxPreçoUnitário.Multiline = true;
-            this.textBoxPreçoUnitário.Name = "textBoxPreçoUnitário";
-            this.textBoxPreçoUnitário.Size = new System.Drawing.Size(370, 72);
-            this.textBoxPreçoUnitário.TabIndex = 35;
-            this.textBoxPreçoUnitário.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelPreçoUnitário
-            // 
-            this.labelPreçoUnitário.AutoSize = true;
-            this.labelPreçoUnitário.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.labelPreçoUnitário.ForeColor = System.Drawing.Color.Black;
-            this.labelPreçoUnitário.Location = new System.Drawing.Point(20, 7);
-            this.labelPreçoUnitário.Name = "labelPreçoUnitário";
-            this.labelPreçoUnitário.Size = new System.Drawing.Size(112, 17);
-            this.labelPreçoUnitário.TabIndex = 2;
-            this.labelPreçoUnitário.Text = "Preço Unitário";
-            // 
             // ControlCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1192,6 +1200,26 @@
             this.panelCentral.ResumeLayout(false);
             this.panelPai.ResumeLayout(false);
             this.panelCentro.ResumeLayout(false);
+            this.panelUnidade.ResumeLayout(false);
+            this.panelUnidade.PerformLayout();
+            this.panelValorComissão.ResumeLayout(false);
+            this.panelValorComissão.PerformLayout();
+            this.panelValorDesconto.ResumeLayout(false);
+            this.panelValorDesconto.PerformLayout();
+            this.panelDesconto.ResumeLayout(false);
+            this.panelDesconto.PerformLayout();
+            this.panelReferência.ResumeLayout(false);
+            this.panelReferência.PerformLayout();
+            this.PanelDescricaoProduto.ResumeLayout(false);
+            this.PanelDescricaoProduto.PerformLayout();
+            this.panelQuantidade.ResumeLayout(false);
+            this.panelQuantidade.PerformLayout();
+            this.panelSubtotalItem.ResumeLayout(false);
+            this.panelSubtotalItem.PerformLayout();
+            this.panelComissão.ResumeLayout(false);
+            this.panelComissão.PerformLayout();
+            this.panelPreçoUnitário.ResumeLayout(false);
+            this.panelPreçoUnitário.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxImagemProduto)).EndInit();
             this.panelSuperior1.ResumeLayout(false);
             this.panelSuperior1.PerformLayout();
@@ -1223,26 +1251,6 @@
             this.panelNovoPedido.ResumeLayout(false);
             this.panelNovoPedido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNovoPedido)).EndInit();
-            this.panelUnidade.ResumeLayout(false);
-            this.panelUnidade.PerformLayout();
-            this.panelValorComissão.ResumeLayout(false);
-            this.panelValorComissão.PerformLayout();
-            this.panelValorDesconto.ResumeLayout(false);
-            this.panelValorDesconto.PerformLayout();
-            this.panelDesconto.ResumeLayout(false);
-            this.panelDesconto.PerformLayout();
-            this.panelReferência.ResumeLayout(false);
-            this.panelReferência.PerformLayout();
-            this.PanelDescricaoProduto.ResumeLayout(false);
-            this.PanelDescricaoProduto.PerformLayout();
-            this.panelQuantidade.ResumeLayout(false);
-            this.panelQuantidade.PerformLayout();
-            this.panelSubtotalItem.ResumeLayout(false);
-            this.panelSubtotalItem.PerformLayout();
-            this.panelComissão.ResumeLayout(false);
-            this.panelComissão.PerformLayout();
-            this.panelPreçoUnitário.ResumeLayout(false);
-            this.panelPreçoUnitário.PerformLayout();
             this.ResumeLayout(false);
 
         }
